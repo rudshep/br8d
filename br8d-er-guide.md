@@ -46,7 +46,7 @@ Each row maps a connector's **own contacts** to logical br8d conductors. It does
 - Contact names and familiar colours are given where useful. A **dash (—)** means no contact is mapped there; leave it unconnected. A gatekeeper still senses its br8d conductor.
 - A contact may appear more than once: for example, a stereo jack sleeve is the return for both channels. The table shows both channel returns; it does not make them isolated.
 - **Shield is not a ninth signal pin.** An asterisk (`*`) marks a contact proposed for the br8d shield. A dash means no separate shield is mapped, or the outer contact is a signal return, as with coax, RCA, TS and unbalanced TRS. Shield/chassis bonding is open; the working assumption is a bond to chassis at **most one end** (`ENV-7`).
-- `br8di…` names identify an interface; `br8do…` names identify a connector or cable form. Suffixes distinguish variants. The connection guide records `br8dimidi`, `br8diaux`, `br8diphono`, `br8dispeaker-pow`, `br8dispeaker-pas`, `br8didmx`, `br8di485`, `br8diled`, `br8dilan`, `br8dicom`, `br8diqwic`, `br8docat`, `br8doflat`, `br8doA`, `br8doB` and `br8doC` as chosen names. Other interface names and suffix tags below are proposals. The earlier maker guide's `br8doaux`, `br8dobac` and `br8doqwiic` are broader or older labels; use the catalogue's more specific names when documenting a mapping.
+- `br8d-i-…` names identify an interface; `br8d-o-…` names identify a connector or cable form. Suffixes distinguish variants. The connection guide records `br8d-i-midi`, `br8d-i-aux`, `br8d-i-phono`, `br8d-i-speaker-pow`, `br8d-i-speaker-pas`, `br8d-i-dmx`, `br8d-i-485`, `br8d-i-led`, `br8d-i-lan`, `br8d-i-com`, `br8d-i-qwic`, `br8d-o-cat`, `br8d-o-flat`, `br8d-o-A`, `br8d-o-B` and `br8d-o-C` as chosen names. Other interface names and suffix tags below are proposals. The earlier maker guide's `br8d-o-aux`, `br8d-o-bac` and `br8d-o-qwiic` are broader or older labels; use the catalogue's more specific names when documenting a mapping.
 - **‡** marks an explicitly open mapping. Other entries are draft mappings too, not tested or approved designs. Colours are conventions, not a substitute for checking the contacts.
 
 ## Connector catalogue
@@ -57,21 +57,21 @@ Search: analog audio, CV, gate, clock, Eurorack, modular, guitar, instrument, he
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8dicv` | 3.5 mm TS modular CV, gate or clock | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8diaux-TS` | 3.5 mm TS mono; also 2.5 mm | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8diaux` | 3.5 mm TRS stereo AUX, headphones or line | Tip (left) | Sleeve | Ring (right) | Sleeve | — | — | — | — | — |
-| `br8diaux-TRSbal` | 3.5 mm TRS balanced mono | Tip (hot) | Ring (cold) | — | — | — | — | — | — | Sleeve* |
-| `br8diaux-TRRS` | 3.5 mm TRRS 4-pole; `br8dopatch` lead ‡ | Tip | Ring 1 | — | — | — | — | Ring 2 | Sleeve | — |
-| `br8dijack-TS` | ¼-inch / 6.35 mm TS mono guitar or instrument | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8dijack` | ¼-inch TRS stereo headphones or line | Tip (left) | Sleeve | Ring (right) | Sleeve | — | — | — | — | — |
-| `br8dijack-TRSbal` | ¼-inch TRS balanced mono | Tip (hot) | Ring (cold) | — | — | — | — | — | — | Sleeve* |
-| `br8dirca-mono` | RCA single plug, mono or line | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8dirca` | RCA stereo pair | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | — | — | — | — | — |
-| `br8dirca-AV` | RCA composite A/V trio | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | Video tip (yellow) | Video sleeve | — | — | — |
-| `br8diphono` | RCA phono, turntable | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | — | — | — | — | Earth lug* |
-| `br8dixlr` | XLR-3 balanced microphone or line | Pin 2 (hot) | Pin 3 (cold) | — | — | — | — | — | — | Pin 1* |
+| `br8d-i-cv` | 3.5 mm TS modular CV, gate or clock | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-aux-TS` | 3.5 mm TS mono; also 2.5 mm | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-aux` | 3.5 mm TRS stereo AUX, headphones or line | Tip (left) | Sleeve | Ring (right) | Sleeve | — | — | — | — | — |
+| `br8d-i-aux-TRSbal` | 3.5 mm TRS balanced mono | Tip (hot) | Ring (cold) | — | — | — | — | — | — | Sleeve* |
+| `br8d-i-aux-TRRS` | 3.5 mm TRRS 4-pole; `br8d-o-patch` lead ‡ | Tip | Ring 1 | — | — | — | — | Ring 2 | Sleeve | — |
+| `br8d-i-jack-TS` | ¼-inch / 6.35 mm TS mono guitar or instrument | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-jack` | ¼-inch TRS stereo headphones or line | Tip (left) | Sleeve | Ring (right) | Sleeve | — | — | — | — | — |
+| `br8d-i-jack-TRSbal` | ¼-inch TRS balanced mono | Tip (hot) | Ring (cold) | — | — | — | — | — | — | Sleeve* |
+| `br8d-i-rca-mono` | RCA single plug, mono or line | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-rca` | RCA stereo pair | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | — | — | — | — | — |
+| `br8d-i-rca-AV` | RCA composite A/V trio | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | Video tip (yellow) | Video sleeve | — | — | — |
+| `br8d-i-phono` | RCA phono, turntable | Left tip (white) | Left sleeve | Right tip (red) | Right sleeve | — | — | — | — | Earth lug* |
+| `br8d-i-xlr` | XLR-3 balanced microphone or line | Pin 2 (hot) | Pin 3 (cold) | — | — | — | — | — | — | Pin 1* |
 
-- **TRRS / `br8dopatch`:** the sleeve connects first on insertion. With a properly designed provider, a 3-pole plug shorts ring 2 to sleeve and the roughly 0 Ω reading is not a valid power signature. Contacts also sweep past one another during insertion; don't assume an untested port handles that safely. CTIA and OMTP phone headsets swap ring 2 and sleeve. Polarity-blind power handling is intended to tolerate the swap, but a headset is not a br8d lead.
+- **TRRS / `br8d-o-patch`:** the sleeve connects first on insertion. With a properly designed provider, a 3-pole plug shorts ring 2 to sleeve and the roughly 0 Ω reading is not a valid power signature. Contacts also sweep past one another during insertion; don't assume an untested port handles that safely. CTIA and OMTP phone headsets swap ring 2 and sleeve. Polarity-blind power handling is intended to tolerate the swap, but a headset is not a br8d lead.
 - **¼-inch insert jacks:** TRS inserts may use tip and ring for send and return rather than stereo left and right. Check the equipment pinout and declare a separate profile; don't assume the stereo row applies.
 - **RCA:** left is usually white, sometimes black; right is red; yellow is composite video. Putting video on C is proposed, not approved. RCA sleeves are signal returns, not br8d shield contacts.
 - **Phono:** a moving-magnet cartridge produces only a few millivolts and expects about 47 kΩ. A 10 kΩ series limiter would load it; a suitable low-resistance gated path is needed at level 2 or above. Mapping the separate turntable earth lug to shield is proposed and still needs approval.
@@ -83,8 +83,8 @@ Search: speaker, passive, powered, amplifier, Speakon, NL8, subwoofer, woofer, m
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8dispeaker-pas` | Speakon NL8, passive speaker | Pin 1+ (sub) | Pin 1− (sub) | Pin 2+ (low) | Pin 2− (low) | Pin 3+ (mid) | Pin 3− (mid) | Pin 4+ (high) | Pin 4− (high) | — |
-| `br8dispeaker-pow` | Powered speaker, any suitable 4-pair br8d connector; cells are signals, **not connector contacts** | Left+ | Left− | Right+ | Right− | Sub+ | Sub− | Power+ | Power− | — |
+| `br8d-i-speaker-pas` | Speakon NL8, passive speaker | Pin 1+ (sub) | Pin 1− (sub) | Pin 2+ (low) | Pin 2− (low) | Pin 3+ (mid) | Pin 3− (mid) | Pin 4+ (high) | Pin 4− (high) | — |
+| `br8d-i-speaker-pow` | Powered speaker, any suitable 4-pair br8d connector; cells are signals, **not connector contacts** | Left+ | Left− | Right+ | Right− | Sub+ | Sub− | Power+ | Power− | — |
 
 - Speaker-level signals can exceed the draft envelope. Even 60 V peak is about 225 W into 8 Ω. A passive speaker has no br8d signature; a signature or a probe with a mute relay would need its own design. Treat this as level 4 or 5 territory, not a beginner DIY port.
 - **Open:** the passive NL8 mapping assigns V to the high-frequency speaker pair rather than power. A rule exempting non-power uses of V from power rules is proposed, not approved. NL4 and NL2 slot allocations are also undecided.
@@ -96,15 +96,15 @@ Search: MIDI DIN-5, TRS Type A, TRS Type B, S/PDIF, SPDIF, AES3, AES3id, word cl
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8dimidi` | MIDI DIN-5, 180° | Pin 4 (source) | Pin 5 (sink) | — | — | — | — | — | — | Pin 2* |
-| `br8dimidi-TRSA` | 3.5 mm TRS MIDI Type A; also 2.5 mm | Ring (source) | Tip (sink) | — | — | — | — | — | — | Sleeve* |
-| `br8dimidi-TRSB` | 3.5 mm TRS MIDI Type B | Tip (source) | Ring (sink) | — | — | — | — | — | — | Sleeve* |
-| `br8dispdif` | S/PDIF coax, RCA (orange) | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8dispdif-BNC` | S/PDIF coax, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
-| `br8dispdif-TS` | S/PDIF coax, 3.5 mm TS | Tip | Sleeve | — | — | — | — | — | — | — |
-| `br8diaes` | AES3 balanced, 110 Ω XLR-3 | Pin 2 (+) | Pin 3 (−) | — | — | — | — | — | — | Pin 1* |
-| `br8diaes-BNC` | AES3id unbalanced, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
-| `br8diwclk` | Word clock, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
+| `br8d-i-midi` | MIDI DIN-5, 180° | Pin 4 (source) | Pin 5 (sink) | — | — | — | — | — | — | Pin 2* |
+| `br8d-i-midi-TRSA` | 3.5 mm TRS MIDI Type A; also 2.5 mm | Ring (source) | Tip (sink) | — | — | — | — | — | — | Sleeve* |
+| `br8d-i-midi-TRSB` | 3.5 mm TRS MIDI Type B | Tip (source) | Ring (sink) | — | — | — | — | — | — | Sleeve* |
+| `br8d-i-spdif` | S/PDIF coax, RCA (orange) | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-spdif-BNC` | S/PDIF coax, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
+| `br8d-i-spdif-TS` | S/PDIF coax, 3.5 mm TS | Tip | Sleeve | — | — | — | — | — | — | — |
+| `br8d-i-aes` | AES3 balanced, 110 Ω XLR-3 | Pin 2 (+) | Pin 3 (−) | — | — | — | — | — | — | Pin 1* |
+| `br8d-i-aes-BNC` | AES3id unbalanced, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
+| `br8d-i-wclk` | Word clock, 75 Ω BNC | Centre | Shell | — | — | — | — | — | — | — |
 
 - **MIDI** is a roughly 5 mA current loop, one direction per cable. DIN pin 4 is the source and pin 5 the sink. For two-way MIDI use two ports, or explicitly design a profile with one direction on A and the other on B. Type A and Type B swap tip and ring: check the adapter type.
 - A legacy MIDI OUT source pin can sit near 5 V behind 220 Ω; a br8d node must treat that as foreign. MIDI shield bonding is conventionally at the OUT end only; a MIDI IN socket does not connect DIN pin 2. The shield contact in the table is not an instruction to bond both ends.
@@ -116,9 +116,9 @@ Search: DMX512, DMX XLR-5, DMX XLR-3, RS-485, addressable LED strip, WS2812, APA
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8didmx` | DMX512 XLR-5 | Pin 3 (Data 1+) | Pin 2 (Data 1−) | Pin 5 (Data 2+) | Pin 4 (Data 2−) | — | — | — | — | Pin 1* |
-| `br8didmx-XLR3` | DMX512 XLR-3 fixtures | Pin 3 (Data+) | Pin 2 (Data−) | — | — | — | — | — | — | Pin 1* |
-| `br8diled` | Addressable LEDs, JST-SM or similar | Data (green or white) | Clock (APA102/SK9822 only) | — | — | — | — | 5 V (red) | GND (black or white) | — |
+| `br8d-i-dmx` | DMX512 XLR-5 | Pin 3 (Data 1+) | Pin 2 (Data 1−) | Pin 5 (Data 2+) | Pin 4 (Data 2−) | — | — | — | — | Pin 1* |
+| `br8d-i-dmx-XLR3` | DMX512 XLR-3 fixtures | Pin 3 (Data+) | Pin 2 (Data−) | — | — | — | — | — | — | Pin 1* |
+| `br8d-i-led` | Addressable LEDs, JST-SM or similar | Data (green or white) | Clock (APA102/SK9822 only) | — | — | — | — | 5 V (red) | GND (black or white) | — |
 
 - DMX and audio XLR swap the A+ and A− contact numbers. Don't mistake a DMX fixture for a microphone input; account for phantom-power faults in the interface.
 - WS2812 uses data only: leave A− open. APA102 and SK9822 use data and clock. The draft V supply is about 500 mA; long strips need a separately designed power injector. Verify the actual LED connector pinout and colours.
@@ -129,14 +129,14 @@ Search: USB-A, USB-B, mini-B, micro-B, USB-C, USB 2.0, USB 3, SuperSpeed, VBUS, 
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8doA` | USB-A 2.0 plug or socket | Pin 3 D+ (green) | Pin 2 D− (white) | — | — | — | — | Pin 1 VBUS (red) | Pin 4 GND (black) | Shell* |
-| `br8doA-3` | USB-A 3.x | Pin 3 D+ (green) | Pin 2 D− (white) | Pin 9 SSTX+ (orange) | Pin 8 SSTX− (purple) | Pin 6 SSRX+ (yellow) | Pin 5 SSRX− (blue) | Pin 1 VBUS | Pin 4 GND | Shell* |
-| `br8doB` | USB-B 2.0, square | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 4 GND | Shell* |
-| `br8doB-3` | USB-B 3.x SuperSpeed | Pin 3 D+ | Pin 2 D− | Pin 9 SSRX+ | Pin 8 SSRX− | Pin 6 SSTX+ | Pin 5 SSTX− | Pin 1 VBUS | Pin 4 GND | Shell* |
-| `br8doB-mini` | USB mini-B, 5-pin | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 5 GND | Shell* |
-| `br8doB-micro` | USB micro-B, 5-pin | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 5 GND | Shell* |
-| `br8doC` | USB-C, USB 2.0 cable, 2-pair profile | A6 / B6 D+ | A7 / B7 D− | — | — | — | — | A4, A9, B4, B9 VBUS | A1, A12, B1, B12 GND | Shell* |
-| `br8doC-4` | USB-C, full-featured cable, 4-pair profile ‡ | A6 / B6 D+ | A7 / B7 D− | A2 TX1+ ‡ | A3 TX1− ‡ | B11 RX1+ ‡ | B10 RX1− ‡ | A4, A9, B4, B9 VBUS | A1, A12, B1, B12 GND | Shell* |
+| `br8d-o-A` | USB-A 2.0 plug or socket | Pin 3 D+ (green) | Pin 2 D− (white) | — | — | — | — | Pin 1 VBUS (red) | Pin 4 GND (black) | Shell* |
+| `br8d-o-A-3` | USB-A 3.x | Pin 3 D+ (green) | Pin 2 D− (white) | Pin 9 SSTX+ (orange) | Pin 8 SSTX− (purple) | Pin 6 SSRX+ (yellow) | Pin 5 SSRX− (blue) | Pin 1 VBUS | Pin 4 GND | Shell* |
+| `br8d-o-B` | USB-B 2.0, square | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 4 GND | Shell* |
+| `br8d-o-B-3` | USB-B 3.x SuperSpeed | Pin 3 D+ | Pin 2 D− | Pin 9 SSRX+ | Pin 8 SSRX− | Pin 6 SSTX+ | Pin 5 SSTX− | Pin 1 VBUS | Pin 4 GND | Shell* |
+| `br8d-o-B-mini` | USB mini-B, 5-pin | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 5 GND | Shell* |
+| `br8d-o-B-micro` | USB micro-B, 5-pin | Pin 3 D+ | Pin 2 D− | — | — | — | — | Pin 1 VBUS | Pin 5 GND | Shell* |
+| `br8d-o-C` | USB-C, USB 2.0 cable, 2-pair profile | A6 / B6 D+ | A7 / B7 D− | — | — | — | — | A4, A9, B4, B9 VBUS | A1, A12, B1, B12 GND | Shell* |
+| `br8d-o-C-4` | USB-C, full-featured cable, 4-pair profile ‡ | A6 / B6 D+ | A7 / B7 D− | A2 TX1+ ‡ | A3 TX1− ‡ | B11 RX1+ ‡ | B10 RX1− ‡ | A4, A9, B4, B9 VBUS | A1, A12, B1, B12 GND | Shell* |
 
 - A br8d port is **not a USB port**. A real USB host can drive VBUS and data; a br8d node must treat these as foreign. USB-shaped hardware alone does not provide USB behaviour or protection.
 - For USB-A/B 3.x, the proposed mapping puts host-to-device on B and device-to-host on C. Pins 8/9 are host SSTX on A and device SSRX on B; pins 5/6 are the opposite. Mini/micro ID and USB 3.x pin 7 GND_DRAIN are unmapped.
@@ -149,8 +149,8 @@ Search: RJ45, CAT5, CAT5e, CAT6, CAT7, Ethernet, LAN, PoE, M12 D-coded, T568A, T
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8docat` / `br8dilan` | RJ45 on UTP/STP CAT5/5e/6/7 | Pin 1 | Pin 2 | Pin 3 | Pin 6 | Pin 4 | Pin 5 | Pin 7 | Pin 8 | Shielded shell* |
-| `br8dilan-M12` | M12 D-coded 4-pin industrial Ethernet | Pin 1 (white/orange) | Pin 3 (orange) | Pin 2 (white/green) | Pin 4 (green) | — | — | — | — | Housing* |
+| `br8d-o-cat` / `br8d-i-lan` | RJ45 on UTP/STP CAT5/5e/6/7 | Pin 1 | Pin 2 | Pin 3 | Pin 6 | Pin 4 | Pin 5 | Pin 7 | Pin 8 | Shielded shell* |
+| `br8d-i-lan-M12` | M12 D-coded 4-pin industrial Ethernet | Pin 1 (white/orange) | Pin 3 (orange) | Pin 2 (white/green) | Pin 4 (green) | — | — | — | — | Housing* |
 
 - Use known straight-through cables and matching endpoints. A br8d RJ45 port is not automatically Ethernet or PoE; don't plug it into a network switch on that assumption.
 - The RJ45 mapping aligns with passive PoE mode B (+ on 4/5, − on 7/8). 1000BASE-T uses all four pairs; a link also carrying this br8d power allocation is limited to 10/100 Ethernet, subject to a suitable Ethernet and power design.
@@ -177,12 +177,12 @@ Search: FTDI, TTL serial, UART, RS-232, DB9, DE-9, CAN, CAN bus, RS-485, Qwiic, 
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8dicom-FTDI` | 6-pin FTDI TTL-232R serial header, host side | Pin 4 TXD (orange) | Pin 5 RXD (yellow) | Pin 6 RTS# (green) | Pin 2 CTS# (brown) | — | — | Pin 3 VCC (red) | Pin 1 GND (black) | — |
-| `br8dicom-DB9` | DE-9 / DB9 RS-232, DTE (PC) side | Pin 3 TXD | Pin 2 RXD | Pin 7 RTS | Pin 8 CTS | Pin 4 DTR | Pin 6 DSR | — | Pin 5 GND | Shell* |
-| `br8dican` | DE-9 / DB9 CAN, CiA 303-1 | Pin 7 CAN_H | Pin 2 CAN_L | — | — | — | — | Pin 9 CAN_V+ (optional) | Pin 3 CAN_GND | Pin 5 CAN_SHLD* |
-| `br8di485` | RS-485 terminal block | D+ (non-inverting) | D− (inverting) | — | — | — | — | — | GND (common) | Shield terminal* |
-| `br8diqwic` | Qwiic / STEMMA QT, JST-SH 4-pin, I²C | Pin 3 SDA (blue) | Pin 4 SCL (yellow) | — | — | — | — | Pin 2 3.3 V (red) | Pin 1 GND (black) | — |
-| `br8digrove` | Grove 4-pin, I²C or signal | Pin 2 (white) | Pin 1 (yellow) | — | — | — | — | Pin 3 VCC (red) | Pin 4 GND (black) | — |
+| `br8d-i-com-FTDI` | 6-pin FTDI TTL-232R serial header, host side | Pin 4 TXD (orange) | Pin 5 RXD (yellow) | Pin 6 RTS# (green) | Pin 2 CTS# (brown) | — | — | Pin 3 VCC (red) | Pin 1 GND (black) | — |
+| `br8d-i-com-DB9` | DE-9 / DB9 RS-232, DTE (PC) side | Pin 3 TXD | Pin 2 RXD | Pin 7 RTS | Pin 8 CTS | Pin 4 DTR | Pin 6 DSR | — | Pin 5 GND | Shell* |
+| `br8d-i-can` | DE-9 / DB9 CAN, CiA 303-1 | Pin 7 CAN_H | Pin 2 CAN_L | — | — | — | — | Pin 9 CAN_V+ (optional) | Pin 3 CAN_GND | Pin 5 CAN_SHLD* |
+| `br8d-i-485` | RS-485 terminal block | D+ (non-inverting) | D− (inverting) | — | — | — | — | — | GND (common) | Shield terminal* |
+| `br8d-i-qwic` | Qwiic / STEMMA QT, JST-SH 4-pin, I²C | Pin 3 SDA (blue) | Pin 4 SCL (yellow) | — | — | — | — | Pin 2 3.3 V (red) | Pin 1 GND (black) | — |
+| `br8d-i-grove` | Grove 4-pin, I²C or signal | Pin 2 (white) | Pin 1 (yellow) | — | — | — | — | Pin 3 VCC (red) | Pin 4 GND (black) | — |
 
 - **FTDI:** the cable/host drives TXD and RTS#; the module drives RXD and CTS#. VCC can be 5 V or 3.3 V depending on the cable. A provider grants only a voltage the node's signature permits.
 - **RS-232:** DTE and DCE swap TXD and RXD; the row is for DTE. Typical levels are about ±5 to ±15 V. DCD (pin 1) and RI (pin 9) are unmapped. V+ is empty and V− is a reference, not a power pair; how the V power rules apply is open.
@@ -197,9 +197,9 @@ Search: 2x4, 2x5, IDC, ribbon, keyed header, flat cable, DC barrel jack, centre 
 
 | Name | Connector and use | 1 A+ | 2 A− | 3 B+ | 4 B− | 5 C+ | 6 C− | 7 V+ | 8 V− | Shield |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `br8doflat` | 2x4 shrouded IDC header, 2.54 mm ribbon | Pin 1 (red stripe) | Pin 2 | Pin 3 | Pin 4 | Pin 5 | Pin 6 | Pin 7 | Pin 8 | — |
-| `br8doflat-10` | 2x5 shrouded IDC header, 2.54 mm ribbon ‡ | Pin 1 (red stripe) | Pin 2 | Pin 3 | Pin 4 | Pin 5 | Pin 6 | Pin 7 | Pin 8 | Pins 9 and 10* ‡ |
-| `br8dipwr` | 5.5 × 2.1 mm DC barrel jack, power only | — | — | — | — | — | — | Centre | Sleeve | — |
+| `br8d-o-flat` | 2x4 shrouded IDC header, 2.54 mm ribbon | Pin 1 (red stripe) | Pin 2 | Pin 3 | Pin 4 | Pin 5 | Pin 6 | Pin 7 | Pin 8 | — |
+| `br8d-o-flat-10` | 2x5 shrouded IDC header, 2.54 mm ribbon ‡ | Pin 1 (red stripe) | Pin 2 | Pin 3 | Pin 4 | Pin 5 | Pin 6 | Pin 7 | Pin 8 | Pins 9 and 10* ‡ |
+| `br8d-i-pwr` | 5.5 × 2.1 mm DC barrel jack, power only | — | — | — | — | — | — | Centre | Sleeve | — |
 
 - **Ribbon:** use a keyed shroud and check continuity. Rotating a 2x4 plug 180° maps pin n to pin 9−n, placing V in the A slot. Reserving 2x5 pins 9 and 10 for shield is an open proposal.
 - **Barrel:** centre-positive is common, but centre-negative exists. The proposed polarity-blind V front end is intended to handle either; verify the supply and circuit before connecting. Typical 9–24 V adapters need a suitable wide-input V-W front end at level 2 or above, not a 5 V-only input.
@@ -210,16 +210,16 @@ The catalogue maps contacts. These cable forms are useful starting points too, b
 
 | Cable or connector | Possible job | What to check |
 |---|---|---|
-| 4-pole AUX, `br8dopatch` | Two-pair control link | [TRRS row](#audio-and-control-voltage) is provisional; A and V are the available pairs. |
-| CAT and RJ45, `br8docat` | Rack-to-desk link | Four pairs; use a known straight-through map, not an assumed Ethernet connection. |
-| USB-A, B or C, `br8doA` / `br8doB` / `br8doC` | Short links using available cables | Check the cable actually carries the required conductors. A USB-shaped br8d port is not automatically USB. |
-| Qwiic, `br8diqwic` | Small I²C control board via an appropriate interface | 3.3 V only; a stock board is not automatically protected. |
-| Keyed 2x4 ribbon, `br8doflat` | Internal rack link | Keying, pin 1 and both ends' mapping. |
-| Twin flex, `br8doflex` | One differential signal, signal and return, or a separately designed power-only link | One pair cannot also provide a second independent pair. |
-| Shielded multicore, `br8doshield` | Possible low-noise run between stations | Shield, chassis and ground rules remain open; treat as experimental. |
-| Unshielded loom, `br8doloom` | Custom internal bundle | Label every conductor and publish a pin table. |
-| M12, `br8dilan-M12` / `br8dom12` | Rugged connector or future road case | Use the appropriate pinout; a rugged plug alone does not provide industrial protection. |
-| Another connector, `br8dox` | One-off or community profile | Document the contacts, cable, signal limits and protection before use. |
+| 4-pole AUX, `br8d-o-patch` | Two-pair control link | [TRRS row](#audio-and-control-voltage) is provisional; A and V are the available pairs. |
+| CAT and RJ45, `br8d-o-cat` | Rack-to-desk link | Four pairs; use a known straight-through map, not an assumed Ethernet connection. |
+| USB-A, B or C, `br8d-o-A` / `br8d-o-B` / `br8d-o-C` | Short links using available cables | Check the cable actually carries the required conductors. A USB-shaped br8d port is not automatically USB. |
+| Qwiic, `br8d-i-qwic` | Small I²C control board via an appropriate interface | 3.3 V only; a stock board is not automatically protected. |
+| Keyed 2x4 ribbon, `br8d-o-flat` | Internal rack link | Keying, pin 1 and both ends' mapping. |
+| Twin flex, `br8d-o-flex` | One differential signal, signal and return, or a separately designed power-only link | One pair cannot also provide a second independent pair. |
+| Shielded multicore, `br8d-o-shield` | Possible low-noise run between stations | Shield, chassis and ground rules remain open; treat as experimental. |
+| Unshielded loom, `br8d-o-loom` | Custom internal bundle | Label every conductor and publish a pin table. |
+| M12, `br8d-i-lan-M12` / `br8d-o-m12` | Rugged connector or future road case | Use the appropriate pinout; a rugged plug alone does not provide industrial protection. |
+| Another connector, `br8d-o-x` | One-off or community profile | Document the contacts, cable, signal limits and protection before use. |
 
 ## Bring-up checklist
 

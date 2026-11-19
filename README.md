@@ -83,7 +83,7 @@ Before wiring modules together:
 4. Decide and document the protection level for each port.
 5. Test the link on the bench before connecting it to the rest of your system.
 
-For a fictional example that follows a synth project from its first effects module to a growing modular system, see the [br8d maker guide](br8d-maker-guide.md).
+For a fictional example that follows a synth project from its first effects module to a growing modular system, see the [br8d-er guide](br8d-er-guide.md).
 
 ## What br8d does not do
 
