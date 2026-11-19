@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The br8d-er guide</title>
+<style>
+  body { max-width: 1800px; margin: 0 auto; padding: 1.5rem; color: #24292f; font: 16px/1.5 system-ui, sans-serif; }
+  a { color: #0969da; }
+  code { padding: .1em .3em; background: #eff1f3; border-radius: 3px; }
+  blockquote { margin-left: 0; padding: 0 1rem; border-left: .25rem solid #d0d7de; color: #57606a; }
+  table { display: block; width: max-content; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: .45rem .6rem; border: 1px solid #d0d7de; text-align: left; vertical-align: middle; }
+  th { background: #f6f8fa; }
+  .thumb { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: 50px; height: 50px; border: 1px solid #aeb8c2; border-radius: 4px; background: #f6f8fa; color: #57606a; font-size: 11px; object-fit: cover; }
+</style>
+</head>
+<body>
+<p>br8d-er: One who adopts the br8d-ing philosophy with a higher repurpose. We love you.</p>
+<h1 id="the-br8d-er-guide">The br8d-er guide</h1>
+<p>Got a cable in a drawer and an idea for another module? br8d is a draft way to give the wires a shared layout, so you can reuse suitable connectors without inventing every pinout from scratch. This guide combines a maker's journey with a connector catalogue: find the thing you have, check what each contact would carry, and make the electronics at both ends agree.</p>
+<blockquote>
+<p><strong>Draft, not a build-verified standard.</strong> The connector mappings, protection levels and example component values need review and bench tests. The <a href="br8d-connection-guide.md">connection guide</a> is the source for the newer names and mappings used here; the <a href="br8d-architecture.md">architecture</a> describes the current electrical rules and open design work. Where this guide proposes something beyond those rules, it is marked as open.</p>
+</blockquote>
+<p><strong>A plug that fits is not proof of compatibility.</strong> A br8d port using a USB, RJ45, audio or other familiar connector is not automatically a USB, Ethernet, headphone or other conventional port. A stock device needs a correctly designed interface or bridge. Don't connect valuable equipment to an untested prototype.</p>
+<h2 id="find-your-way-around">Find your way around</h2>
+<ul>
+<li><a href="#start-with-a-project">Start with a project</a>: MIDI, CV, an effect and a growing modular rig.</li>
+<li><a href="#read-the-catalogue">Read the catalogue</a>: pair order, names, dashes and shields.</li>
+<li><a href="#connector-catalogue">Connector catalogue</a>: <a href="#audio-and-control-voltage">audio and CV</a>, <a href="#speakers">speakers</a>, <a href="#midi-and-digital-audio">MIDI and digital audio</a>, <a href="#lighting">lighting</a>, <a href="#usb">USB</a>, <a href="#network">network</a>, <a href="#serial-and-buses">serial and buses</a>, <a href="#headers-and-power">headers and power</a>. Search with <strong>Ctrl-F</strong> for a connector, protocol, contact or <code>br8d</code> name.</li>
+<li><a href="#cable-choices">Cable choices</a>: twin flex, shielded multicore, looms and custom connectors.</li>
+<li><a href="#bring-up-checklist">Bring-up checklist and bench seed</a>: a practical starting point, not a finished circuit.</li>
+<li><a href="#not-mapped-and-open-decisions">Not mapped and open decisions</a>: things that still need a decision or don't fit this guide.</li>
+</ul>
+<h2 id="start-with-a-project">Start with a project</h2>
+<p>Imagine you've built a CV-controlled effect for a modular synth. Audio runs on ordinary patch leads. You want the effect to follow a MIDI sequencer and take CV from the synth, but there's no MIDI cable in the drawer—only a four-conductor AUX lead.</p>
+<p>Build a <strong>bridge</strong>, not a magic cable: the bridge connects to the sequencer's conventional MIDI socket and the synth's CV output. It converts those signals for a separately designed br8d link; a matching interface on the effect translates them back into signals its circuit can use. Both boxes have local power.</p>
+<table>
+<thead>
+<tr>
+<th>First link: 4-pole 3.5 mm TRRS</th>
+<th>Intended use</th>
+<th>Check first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: tip / ring 1</td>
+<td>MIDI-derived data</td>
+<td>The bridge handles the conventional MIDI current loop; the link needs its own agreed electrical signal.</td>
+</tr>
+<tr>
+<td>V: ring 2 / sleeve</td>
+<td>Differential CV, <strong>not power</strong></td>
+<td>This use of V is an <strong>open proposal</strong>, not an approved exception to the architecture's power rules. Both ends need the same documented profile and appropriate protection.</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="#audio-and-control-voltage">TRRS mapping</a> itself is provisional. Check the actual cable's continuity and both port pinouts; don't substitute a phone headset or an ordinary headphone port. A three-pole plug can short the V contacts.</p>
+<p>When the effect works, perhaps it becomes the first piece of a larger modular tribute: a filter, envelope, sequencer and a few delightfully odd control boxes. A MIDI/CV bridge can translate MIDI to CV and gate, and measured CV and gate back to MIDI. Conventional ports remain conventional on the equipment side; br8d-aware electronics do the adapting.</p>
+<p>As the rack grows, a keyed ribbon or CAT cable gives you more conductors. You might document a <strong>different</strong> four-pair link: A for MIDI-derived data, B for differential CV, C for gate/clock, and V for power if both ends are designed for it. It is not interchangeable with the first two-pair profile. Write down the signal levels, directions and pinout for each link, then test them.</p>
+<h2 id="read-the-catalogue">Read the catalogue</h2>
+<p>Each row maps a connector's <strong>own contacts</strong> to logical br8d conductors. It does not say that the connector automatically converts a protocol or that an ordinary device is safe to connect.</p>
+<table>
+<thead>
+<tr>
+<th>Logical br8d pin</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conductor</td>
+<td>A+</td>
+<td>A−</td>
+<td>B+</td>
+<td>B−</td>
+<td>C+</td>
+<td>C−</td>
+<td>V+</td>
+<td>V−</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>This is pair order, as on a 2x4 ribbon, <strong>not RJ45 physical pin order</strong>. See <a href="#rj45-wire-colours">RJ45 wire colours</a>.</li>
+<li>Contact names and familiar colours are given where useful. A <strong>dash (—)</strong> means no contact is mapped there; leave it unconnected. A gatekeeper still senses its br8d conductor.</li>
+<li>A contact may appear more than once: for example, a stereo jack sleeve is the return for both channels. The table shows both channel returns; it does not make them isolated.</li>
+<li><strong>Shield is not a ninth signal pin.</strong> An asterisk (<code>*</code>) marks a contact proposed for the br8d shield. A dash means no separate shield is mapped, or the outer contact is a signal return, as with coax, RCA, TS and unbalanced TRS. Shield/chassis bonding is open; the working assumption is a bond to chassis at <strong>most one end</strong> (<code>ENV-7</code>).</li>
+<li><code>br8d-i-…</code> names identify an interface; <code>br8d-o-…</code> names identify a connector or cable form. Suffixes distinguish variants. The connection guide records <code>br8d-i-midi</code>, <code>br8d-i-aux</code>, <code>br8d-i-phono</code>, <code>br8d-i-speaker-pow</code>, <code>br8d-i-speaker-pas</code>, <code>br8d-i-dmx</code>, <code>br8d-i-485</code>, <code>br8d-i-led</code>, <code>br8d-i-lan</code>, <code>br8d-i-com</code>, <code>br8d-i-qwic</code>, <code>br8d-o-cat</code>, <code>br8d-o-flat</code>, <code>br8d-o-A</code>, <code>br8d-o-B</code> and <code>br8d-o-C</code> as chosen names. Other interface names and suffix tags below are proposals. The earlier maker guide's <code>br8d-o-aux</code>, <code>br8d-o-bac</code> and <code>br8d-o-qwiic</code> are broader or older labels; use the catalogue's more specific names when documenting a mapping.</li>
+<li><strong>‡</strong> marks an explicitly open mapping. Other entries are draft mappings too, not tested or approved designs. Colours are conventions, not a substitute for checking the contacts.</li>
+</ul>
+<h2 id="connector-catalogue">Connector catalogue</h2>
+<h3 id="audio-and-control-voltage">Audio and control voltage</h3>
+<p>Search: analog audio, CV, gate, clock, Eurorack, modular, guitar, instrument, headphone, AUX, jack, TRS, TRRS, RCA, phono, turntable, XLR, balanced, unbalanced.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-cv</code></td>
+<td>3.5 mm TS modular CV, gate or clock</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aux-TS</code></td>
+<td>3.5 mm TS mono; also 2.5 mm</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aux</code></td>
+<td>3.5 mm TRS stereo AUX, headphones or line</td>
+<td>Tip (left)</td>
+<td>Sleeve</td>
+<td>Ring (right)</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aux-TRSbal</code></td>
+<td>3.5 mm TRS balanced mono</td>
+<td>Tip (hot)</td>
+<td>Ring (cold)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Sleeve*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aux-TRRS</code></td>
+<td>3.5 mm TRRS 4-pole; <code>br8d-o-patch</code> lead ‡</td>
+<td>Tip</td>
+<td>Ring 1</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Ring 2</td>
+<td>Sleeve</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-jack-TS</code></td>
+<td>¼-inch / 6.35 mm TS mono guitar or instrument</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-jack</code></td>
+<td>¼-inch TRS stereo headphones or line</td>
+<td>Tip (left)</td>
+<td>Sleeve</td>
+<td>Ring (right)</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-jack-TRSbal</code></td>
+<td>¼-inch TRS balanced mono</td>
+<td>Tip (hot)</td>
+<td>Ring (cold)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Sleeve*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-rca-mono</code></td>
+<td>RCA single plug, mono or line</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-rca</code></td>
+<td>RCA stereo pair</td>
+<td>Left tip (white)</td>
+<td>Left sleeve</td>
+<td>Right tip (red)</td>
+<td>Right sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-rca-AV</code></td>
+<td>RCA composite A/V trio</td>
+<td>Left tip (white)</td>
+<td>Left sleeve</td>
+<td>Right tip (red)</td>
+<td>Right sleeve</td>
+<td>Video tip (yellow)</td>
+<td>Video sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-phono</code></td>
+<td>RCA phono, turntable</td>
+<td>Left tip (white)</td>
+<td>Left sleeve</td>
+<td>Right tip (red)</td>
+<td>Right sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Earth lug*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-xlr</code></td>
+<td>XLR-3 balanced microphone or line</td>
+<td>Pin 2 (hot)</td>
+<td>Pin 3 (cold)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1*</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>TRRS / <code>br8d-o-patch</code>:</strong> the sleeve connects first on insertion. With a properly designed provider, a 3-pole plug shorts ring 2 to sleeve and the roughly 0 Ω reading is not a valid power signature. Contacts also sweep past one another during insertion; don't assume an untested port handles that safely. CTIA and OMTP phone headsets swap ring 2 and sleeve. Polarity-blind power handling is intended to tolerate the swap, but a headset is not a br8d lead.</li>
+<li><strong>¼-inch insert jacks:</strong> TRS inserts may use tip and ring for send and return rather than stereo left and right. Check the equipment pinout and declare a separate profile; don't assume the stereo row applies.</li>
+<li><strong>RCA:</strong> left is usually white, sometimes black; right is red; yellow is composite video. Putting video on C is proposed, not approved. RCA sleeves are signal returns, not br8d shield contacts.</li>
+<li><strong>Phono:</strong> a moving-magnet cartridge produces only a few millivolts and expects about 47 kΩ. A 10 kΩ series limiter would load it; a suitable low-resistance gated path is needed at level 2 or above. Mapping the separate turntable earth lug to shield is proposed and still needs approval.</li>
+<li><strong>XLR and phantom power:</strong> audio XLR uses pin 2 hot, whereas DMX uses pin 3 Data+. Phantom power can place +48 V on pins 2 and 3 relative to pin 1: a near-zero differential reading does not mean there is no hazardous common-mode voltage. The front end needs to handle the fault; an RS-485 transceiver's enable pin does not isolate its bus pins (<code>GK-10</code>).</li>
+</ul>
+<h3 id="speakers">Speakers</h3>
+<p>Search: speaker, passive, powered, amplifier, Speakon, NL8, subwoofer, woofer, midrange, tweeter.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-speaker-pas</code></td>
+<td>Speakon NL8, passive speaker</td>
+<td>Pin 1+ (sub)</td>
+<td>Pin 1− (sub)</td>
+<td>Pin 2+ (low)</td>
+<td>Pin 2− (low)</td>
+<td>Pin 3+ (mid)</td>
+<td>Pin 3− (mid)</td>
+<td>Pin 4+ (high)</td>
+<td>Pin 4− (high)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-speaker-pow</code></td>
+<td>Powered speaker, any suitable 4-pair br8d connector; cells are signals, <strong>not connector contacts</strong></td>
+<td>Left+</td>
+<td>Left−</td>
+<td>Right+</td>
+<td>Right−</td>
+<td>Sub+</td>
+<td>Sub−</td>
+<td>Power+</td>
+<td>Power−</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Speaker-level signals can exceed the draft envelope. Even 60 V peak is about 225 W into 8 Ω. A passive speaker has no br8d signature; a signature or a probe with a mute relay would need its own design. Treat this as level 4 or 5 territory, not a beginner DIY port.</li>
+<li><strong>Open:</strong> the passive NL8 mapping assigns V to the high-frequency speaker pair rather than power. A rule exempting non-power uses of V from power rules is proposed, not approved. NL4 and NL2 slot allocations are also undecided.</li>
+<li>For a powered speaker, select a connector from the catalogue and use its contact map; also specify the audio levels, power and endpoint electronics. The row above does not prescribe an NL8, RJ45 or ribbon contact pinout.</li>
+</ul>
+<h3 id="midi-and-digital-audio">MIDI and digital audio</h3>
+<p>Search: MIDI DIN-5, TRS Type A, TRS Type B, S/PDIF, SPDIF, AES3, AES3id, word clock, coax, BNC, optical, TOSLINK, ADAT.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-midi</code></td>
+<td>MIDI DIN-5, 180°</td>
+<td>Pin 4 (source)</td>
+<td>Pin 5 (sink)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 2*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-midi-TRSA</code></td>
+<td>3.5 mm TRS MIDI Type A; also 2.5 mm</td>
+<td>Ring (source)</td>
+<td>Tip (sink)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Sleeve*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-midi-TRSB</code></td>
+<td>3.5 mm TRS MIDI Type B</td>
+<td>Tip (source)</td>
+<td>Ring (sink)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Sleeve*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-spdif</code></td>
+<td>S/PDIF coax, RCA (orange)</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-spdif-BNC</code></td>
+<td>S/PDIF coax, 75 Ω BNC</td>
+<td>Centre</td>
+<td>Shell</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-spdif-TS</code></td>
+<td>S/PDIF coax, 3.5 mm TS</td>
+<td>Tip</td>
+<td>Sleeve</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aes</code></td>
+<td>AES3 balanced, 110 Ω XLR-3</td>
+<td>Pin 2 (+)</td>
+<td>Pin 3 (−)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-aes-BNC</code></td>
+<td>AES3id unbalanced, 75 Ω BNC</td>
+<td>Centre</td>
+<td>Shell</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-wclk</code></td>
+<td>Word clock, 75 Ω BNC</td>
+<td>Centre</td>
+<td>Shell</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>MIDI</strong> is a roughly 5 mA current loop, one direction per cable. DIN pin 4 is the source and pin 5 the sink. For two-way MIDI use two ports, or explicitly design a profile with one direction on A and the other on B. Type A and Type B swap tip and ring: check the adapter type.</li>
+<li>A legacy MIDI OUT source pin can sit near 5 V behind 220 Ω; a br8d node must treat that as foreign. MIDI shield bonding is conventionally at the OUT end only; a MIDI IN socket does not connect DIN pin 2. The shield contact in the table is not an instruction to bond both ends.</li>
+<li>Coax shells carry the signal return, not a separate br8d shield. TOSLINK and ADAT are optical and have no electrical contact mapping here.</li>
+</ul>
+<h3 id="lighting">Lighting</h3>
+<p>Search: DMX512, DMX XLR-5, DMX XLR-3, RS-485, addressable LED strip, WS2812, APA102, SK9822, JST-SM.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-dmx</code></td>
+<td>DMX512 XLR-5</td>
+<td>Pin 3 (Data 1+)</td>
+<td>Pin 2 (Data 1−)</td>
+<td>Pin 5 (Data 2+)</td>
+<td>Pin 4 (Data 2−)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-dmx-XLR3</code></td>
+<td>DMX512 XLR-3 fixtures</td>
+<td>Pin 3 (Data+)</td>
+<td>Pin 2 (Data−)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-led</code></td>
+<td>Addressable LEDs, JST-SM or similar</td>
+<td>Data (green or white)</td>
+<td>Clock (APA102/SK9822 only)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>5 V (red)</td>
+<td>GND (black or white)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>DMX and audio XLR swap the A+ and A− contact numbers. Don't mistake a DMX fixture for a microphone input; account for phantom-power faults in the interface.</li>
+<li>WS2812 uses data only: leave A− open. APA102 and SK9822 use data and clock. The draft V supply is about 500 mA; long strips need a separately designed power injector. Verify the actual LED connector pinout and colours.</li>
+</ul>
+<h3 id="usb">USB</h3>
+<p>Search: USB-A, USB-B, mini-B, micro-B, USB-C, USB 2.0, USB 3, SuperSpeed, VBUS, CC, SBU.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-A</code></td>
+<td>USB-A 2.0 plug or socket</td>
+<td>Pin 3 D+ (green)</td>
+<td>Pin 2 D− (white)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1 VBUS (red)</td>
+<td>Pin 4 GND (black)</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-A-3</code></td>
+<td>USB-A 3.x</td>
+<td>Pin 3 D+ (green)</td>
+<td>Pin 2 D− (white)</td>
+<td>Pin 9 SSTX+ (orange)</td>
+<td>Pin 8 SSTX− (purple)</td>
+<td>Pin 6 SSRX+ (yellow)</td>
+<td>Pin 5 SSRX− (blue)</td>
+<td>Pin 1 VBUS</td>
+<td>Pin 4 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-B</code></td>
+<td>USB-B 2.0, square</td>
+<td>Pin 3 D+</td>
+<td>Pin 2 D−</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1 VBUS</td>
+<td>Pin 4 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-B-3</code></td>
+<td>USB-B 3.x SuperSpeed</td>
+<td>Pin 3 D+</td>
+<td>Pin 2 D−</td>
+<td>Pin 9 SSRX+</td>
+<td>Pin 8 SSRX−</td>
+<td>Pin 6 SSTX+</td>
+<td>Pin 5 SSTX−</td>
+<td>Pin 1 VBUS</td>
+<td>Pin 4 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-B-mini</code></td>
+<td>USB mini-B, 5-pin</td>
+<td>Pin 3 D+</td>
+<td>Pin 2 D−</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1 VBUS</td>
+<td>Pin 5 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-B-micro</code></td>
+<td>USB micro-B, 5-pin</td>
+<td>Pin 3 D+</td>
+<td>Pin 2 D−</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 1 VBUS</td>
+<td>Pin 5 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-C</code></td>
+<td>USB-C, USB 2.0 cable, 2-pair profile</td>
+<td>A6 / B6 D+</td>
+<td>A7 / B7 D−</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>A4, A9, B4, B9 VBUS</td>
+<td>A1, A12, B1, B12 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-C-4</code></td>
+<td>USB-C, full-featured cable, 4-pair profile ‡</td>
+<td>A6 / B6 D+</td>
+<td>A7 / B7 D−</td>
+<td>A2 TX1+ ‡</td>
+<td>A3 TX1− ‡</td>
+<td>B11 RX1+ ‡</td>
+<td>B10 RX1− ‡</td>
+<td>A4, A9, B4, B9 VBUS</td>
+<td>A1, A12, B1, B12 GND</td>
+<td>Shell*</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A br8d port is <strong>not a USB port</strong>. A real USB host can drive VBUS and data; a br8d node must treat these as foreign. USB-shaped hardware alone does not provide USB behaviour or protection.</li>
+<li>For USB-A/B 3.x, the proposed mapping puts host-to-device on B and device-to-host on C. Pins 8/9 are host SSTX on A and device SSRX on B; pins 5/6 are the opposite. Mini/micro ID and USB 3.x pin 7 GND_DRAIN are unmapped.</li>
+<li>Start with the USB-C 2-pair profile for USB 2.0-only cables. The B/C SuperSpeed mapping is <strong>open</strong>: plug flipping changes the lanes and needs a detection rule. SBU1/SBU2 are unmapped; analog audio adapter mode is not covered.</li>
+<li>A USB-C source normally waits for Rd on CC before driving VBUS. A br8d port does not automatically power a USB-C sink or draw from a USB-C source. The draft br8d provider leaves CC unconnected and does not drive VBUS before recognising a signature; USB behaviour requires a separate design.</li>
+</ul>
+<h3 id="network">Network</h3>
+<p>Search: RJ45, CAT5, CAT5e, CAT6, CAT7, Ethernet, LAN, PoE, M12 D-coded, T568A, T568B, crossover.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-cat</code> / <code>br8d-i-lan</code></td>
+<td>RJ45 on UTP/STP CAT5/5e/6/7</td>
+<td>Pin 1</td>
+<td>Pin 2</td>
+<td>Pin 3</td>
+<td>Pin 6</td>
+<td>Pin 4</td>
+<td>Pin 5</td>
+<td>Pin 7</td>
+<td>Pin 8</td>
+<td>Shielded shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-lan-M12</code></td>
+<td>M12 D-coded 4-pin industrial Ethernet</td>
+<td>Pin 1 (white/orange)</td>
+<td>Pin 3 (orange)</td>
+<td>Pin 2 (white/green)</td>
+<td>Pin 4 (green)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Housing*</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Use known straight-through cables and matching endpoints. A br8d RJ45 port is not automatically Ethernet or PoE; don't plug it into a network switch on that assumption.</li>
+<li>The RJ45 mapping aligns with passive PoE mode B (+ on 4/5, − on 7/8). 1000BASE-T uses all four pairs; a link also carrying this br8d power allocation is limited to 10/100 Ethernet, subject to a suitable Ethernet and power design.</li>
+<li>M12 is a connector, not a protection rating. Industrial protection is beyond the maker-level target; the architecture places it at level 5.</li>
+</ul>
+<h4 id="rj45-wire-colours">RJ45 wire colours</h4>
+<p>Terminate both ends to the <strong>same</strong> standard. T568A at one end and T568B at the other makes a crossover that swaps A and B. These are cable-side colours; verify a cable rather than relying on colour alone.</p>
+<table>
+<thead>
+<tr>
+<th>RJ45 pin</th>
+<th>br8d conductor</th>
+<th>T568B</th>
+<th>T568A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A+</td>
+<td>White/orange</td>
+<td>White/green</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A−</td>
+<td>Orange</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B+</td>
+<td>White/green</td>
+<td>White/orange</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B−</td>
+<td>Green</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C+</td>
+<td>Blue</td>
+<td>Blue</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C−</td>
+<td>White/blue</td>
+<td>White/blue</td>
+</tr>
+<tr>
+<td>7</td>
+<td>V+</td>
+<td>White/brown</td>
+<td>White/brown</td>
+</tr>
+<tr>
+<td>8</td>
+<td>V−</td>
+<td>Brown</td>
+<td>Brown</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serial-and-buses">Serial and buses</h3>
+<p>Search: FTDI, TTL serial, UART, RS-232, DB9, DE-9, CAN, CAN bus, RS-485, Qwiic, STEMMA QT, I2C, I²C, Grove.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-com-FTDI</code></td>
+<td>6-pin FTDI TTL-232R serial header, host side</td>
+<td>Pin 4 TXD (orange)</td>
+<td>Pin 5 RXD (yellow)</td>
+<td>Pin 6 RTS# (green)</td>
+<td>Pin 2 CTS# (brown)</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 3 VCC (red)</td>
+<td>Pin 1 GND (black)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-com-DB9</code></td>
+<td>DE-9 / DB9 RS-232, DTE (PC) side</td>
+<td>Pin 3 TXD</td>
+<td>Pin 2 RXD</td>
+<td>Pin 7 RTS</td>
+<td>Pin 8 CTS</td>
+<td>Pin 4 DTR</td>
+<td>Pin 6 DSR</td>
+<td>—</td>
+<td>Pin 5 GND</td>
+<td>Shell*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-can</code></td>
+<td>DE-9 / DB9 CAN, CiA 303-1</td>
+<td>Pin 7 CAN_H</td>
+<td>Pin 2 CAN_L</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 9 CAN_V+ (optional)</td>
+<td>Pin 3 CAN_GND</td>
+<td>Pin 5 CAN_SHLD*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-485</code></td>
+<td>RS-485 terminal block</td>
+<td>D+ (non-inverting)</td>
+<td>D− (inverting)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>GND (common)</td>
+<td>Shield terminal*</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-qwic</code></td>
+<td>Qwiic / STEMMA QT, JST-SH 4-pin, I²C</td>
+<td>Pin 3 SDA (blue)</td>
+<td>Pin 4 SCL (yellow)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 2 3.3 V (red)</td>
+<td>Pin 1 GND (black)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-grove</code></td>
+<td>Grove 4-pin, I²C or signal</td>
+<td>Pin 2 (white)</td>
+<td>Pin 1 (yellow)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Pin 3 VCC (red)</td>
+<td>Pin 4 GND (black)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>FTDI:</strong> the cable/host drives TXD and RTS#; the module drives RXD and CTS#. VCC can be 5 V or 3.3 V depending on the cable. A provider grants only a voltage the node's signature permits.</li>
+<li><strong>RS-232:</strong> DTE and DCE swap TXD and RXD; the row is for DTE. Typical levels are about ±5 to ±15 V. DCD (pin 1) and RI (pin 9) are unmapped. V+ is empty and V− is a reference, not a power pair; how the V power rules apply is open.</li>
+<li><strong>CAN:</strong> CAN_V+ is optional, nominally 7–13 V when supplied by the bus. Check the actual bus and interface.</li>
+<li><strong>RS-485:</strong> vendor A/B labels are inconsistent. The table uses D+ for the non-inverting line, called B in TIA-485 naming. Check the transceiver and terminal labels. V− is a common reference here, not a power supply.</li>
+<li><strong>Qwiic / STEMMA QT:</strong> SDA and SCL are single-ended, open-drain I²C signals referenced to V−. Qwiic is <strong>3.3 V only</strong>: never grant 5 V. It needs a 3.3 V power class or deliberate forced mode with a 3.3 V ceiling (<code>EMIT-5</code>). A stock Qwiic board is not automatically br8d-protected.</li>
+<li><strong>Grove:</strong> voltage can be 3.3 V or 5 V; identify the actual device, connector pinout and permitted voltage. For I²C, the lines are single-ended and open-drain, referenced to V−.</li>
+</ul>
+<h3 id="headers-and-power">Headers and power</h3>
+<p>Search: 2x4, 2x5, IDC, ribbon, keyed header, flat cable, DC barrel jack, centre positive, centre negative, power supply.</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Connector and use</th>
+<th>1 A+</th>
+<th>2 A−</th>
+<th>3 B+</th>
+<th>4 B−</th>
+<th>5 C+</th>
+<th>6 C−</th>
+<th>7 V+</th>
+<th>8 V−</th>
+<th>Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-flat</code></td>
+<td>2x4 shrouded IDC header, 2.54 mm ribbon</td>
+<td>Pin 1 (red stripe)</td>
+<td>Pin 2</td>
+<td>Pin 3</td>
+<td>Pin 4</td>
+<td>Pin 5</td>
+<td>Pin 6</td>
+<td>Pin 7</td>
+<td>Pin 8</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-o-flat-10</code></td>
+<td>2x5 shrouded IDC header, 2.54 mm ribbon ‡</td>
+<td>Pin 1 (red stripe)</td>
+<td>Pin 2</td>
+<td>Pin 3</td>
+<td>Pin 4</td>
+<td>Pin 5</td>
+<td>Pin 6</td>
+<td>Pin 7</td>
+<td>Pin 8</td>
+<td>Pins 9 and 10* ‡</td>
+</tr>
+<tr>
+<td><span class="thumb" role="img" aria-label="Connector image placeholder">Image</span></td>
+<td><code>br8d-i-pwr</code></td>
+<td>5.5 × 2.1 mm DC barrel jack, power only</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Centre</td>
+<td>Sleeve</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Ribbon:</strong> use a keyed shroud and check continuity. Rotating a 2x4 plug 180° maps pin n to pin 9−n, placing V in the A slot. Reserving 2x5 pins 9 and 10 for shield is an open proposal.</li>
+<li><strong>Barrel:</strong> centre-positive is common, but centre-negative exists. The proposed polarity-blind V front end is intended to handle either; verify the supply and circuit before connecting. Typical 9–24 V adapters need a suitable wide-input V-W front end at level 2 or above, not a 5 V-only input.</li>
+</ul>
+<h2 id="cable-choices">Cable choices</h2>
+<p>The catalogue maps contacts. These cable forms are useful starting points too, but each build still needs a pin table and matching electronics.</p>
+<table>
+<thead>
+<tr>
+<th>Cable or connector</th>
+<th>Possible job</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4-pole AUX, <code>br8d-o-patch</code></td>
+<td>Two-pair control link</td>
+<td><a href="#audio-and-control-voltage">TRRS row</a> is provisional; A and V are the available pairs.</td>
+</tr>
+<tr>
+<td>CAT and RJ45, <code>br8d-o-cat</code></td>
+<td>Rack-to-desk link</td>
+<td>Four pairs; use a known straight-through map, not an assumed Ethernet connection.</td>
+</tr>
+<tr>
+<td>USB-A, B or C, <code>br8d-o-A</code> / <code>br8d-o-B</code> / <code>br8d-o-C</code></td>
+<td>Short links using available cables</td>
+<td>Check the cable actually carries the required conductors. A USB-shaped br8d port is not automatically USB.</td>
+</tr>
+<tr>
+<td>Qwiic, <code>br8d-i-qwic</code></td>
+<td>Small I²C control board via an appropriate interface</td>
+<td>3.3 V only; a stock board is not automatically protected.</td>
+</tr>
+<tr>
+<td>Keyed 2x4 ribbon, <code>br8d-o-flat</code></td>
+<td>Internal rack link</td>
+<td>Keying, pin 1 and both ends' mapping.</td>
+</tr>
+<tr>
+<td>Twin flex, <code>br8d-o-flex</code></td>
+<td>One differential signal, signal and return, or a separately designed power-only link</td>
+<td>One pair cannot also provide a second independent pair.</td>
+</tr>
+<tr>
+<td>Shielded multicore, <code>br8d-o-shield</code></td>
+<td>Possible low-noise run between stations</td>
+<td>Shield, chassis and ground rules remain open; treat as experimental.</td>
+</tr>
+<tr>
+<td>Unshielded loom, <code>br8d-o-loom</code></td>
+<td>Custom internal bundle</td>
+<td>Label every conductor and publish a pin table.</td>
+</tr>
+<tr>
+<td>M12, <code>br8d-i-lan-M12</code> / <code>br8d-o-m12</code></td>
+<td>Rugged connector or future road case</td>
+<td>Use the appropriate pinout; a rugged plug alone does not provide industrial protection.</td>
+</tr>
+<tr>
+<td>Another connector, <code>br8d-o-x</code></td>
+<td>One-off or community profile</td>
+<td>Document the contacts, cable, signal limits and protection before use.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bring-up-checklist">Bring-up checklist</h2>
+<ol>
+<li><strong>Write the profile.</strong> List connector, cable, pair assignments, direction, signal ranges, current and whether V carries power. Mark proposals and unresolved exceptions.</li>
+<li><strong>Check both ends and the cable.</strong> Physical fit is not electrical compatibility. Use the right bridge for a conventional MIDI, CV, USB, Qwiic or other device; check continuity and orientation.</li>
+<li><strong>State the protection level.</strong> Level 0 is not protected. Levels 1 and above are draft design targets, not verified ratings. The architecture targets ±60 V DC between any two conductors or a conductor and ground, and transients up to 100 V for 1 ms; suitable hardware and published testing are still needed. Don't rely on these targets as a guarantee.</li>
+<li><strong>Start with local power.</strong> Add cable power only once the provider, node, signature, current limit and V front end are designed for the link. Forced power without a signature must be deliberate and indicated.</li>
+<li><strong>Test before connecting valuable gear.</strong> Use current-limited supplies and known pin maps. Follow the <a href="br8d-architecture.md#7-bench-test-plan">architecture bench-test plan</a> and record failures as well as successes.</li>
+</ol>
+<h3 id="bench-seed-5-v-power-and-serial">Bench seed: 5 V power and serial</h3>
+<p>This is a simple <strong>provisional, unverified</strong> provider/node example, not a reference circuit. It uses single-ended 3.3 V serial referenced to V−, so it needs the DC supply and a shared reference. For a self-powered link without V, consider differential signalling instead.</p>
+<table>
+<thead>
+<tr>
+<th>Conductor</th>
+<th>Purpose</th>
+<th>Direction / draft value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V+ / V−</td>
+<td>Power</td>
+<td>Provider to node; 5 V, up to 500 mA <strong>[PROVISIONAL]</strong></td>
+</tr>
+<tr>
+<td>A+</td>
+<td>Serial TX</td>
+<td>Provider drives, 3.3 V logic referenced to V−</td>
+</tr>
+<tr>
+<td>A−</td>
+<td>Serial RX</td>
+<td>Node drives, 3.3 V logic referenced to V−</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>V+ / V−</th>
+<th>A+ / A−</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RJ45</td>
+<td>7 / 8</td>
+<td>1 / 2</td>
+</tr>
+<tr>
+<td>USB-A or USB-B</td>
+<td>VBUS / GND</td>
+<td>D+ / D−</td>
+</tr>
+<tr>
+<td>4-pole 3.5 mm TRRS ‡</td>
+<td>Ring 2 / sleeve</td>
+<td>Tip / ring 1</td>
+</tr>
+<tr>
+<td>Keyed 2x4 IDC</td>
+<td>7 / 8</td>
+<td>1 / 2</td>
+</tr>
+</tbody>
+</table>
+<p>Use matching br8d ports and a known straight-through cable, not ordinary USB or Ethernet ports. The earlier seed suggests 115200 baud and up to about 3 m as starting points to verify, not guarantees.</p>
+<ol>
+<li>The node presents a signature across V <strong>before</strong> its rectifier. The draft candidate is 15 kΩ ±1%, at least 0.25 W, marked sacrificial <strong>[PROVISIONAL]</strong>.</li>
+<li>The node's V front end suits its protection level. The level 1 example uses a fuse, bidirectional TVS, Schottky bridge and regulator; check bridge and cable voltage drops against the node's input range.</li>
+<li>Each A conductor needs the appropriate limiter, clamp, sense tap and gate before the UART. The earlier level 1 example suggests about 10 kΩ 1206 series resistors and at least 1 MΩ sense resistors; verify the parts and signal rate on the bench.</li>
+<li>The provider starts with V off and signal pins high-impedance. It listens first, then probes V only after a quiet reading. The draft probe is 1 V through 15 kΩ, read by an ADC.</li>
+<li>If the signature is recognised, the provider ramps V to 5 V with an initial 100 mA limit, potentially rising toward 500 mA after startup <strong>[PROVISIONAL]</strong>. On loss of signature or supply, or a sustained current-limit fault, it switches V off and returns to a defensive state.</li>
+</ol>
+<p>As rough starting estimates, the architecture gives loop resistance drops of 0.17 V per metre per amp for 24 AWG copper and 0.43 V per metre per amp for 28 AWG. Measure the actual cable and load, and account for bridge drop. For longer runs, consider differential serial such as RS-485 with a properly rated or gated transceiver.</p>
+<h2 id="not-mapped-and-open-decisions">Not mapped and open decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Connector or case</th>
+<th>Why it is not mapped here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RJ11 / RJ12 telephone</td>
+<td>Ring voltage can be about 90 V RMS, beyond the draft ±60 V envelope.</td>
+</tr>
+<tr>
+<td>Mains / IEC</td>
+<td>Mains voltages are outside the envelope.</td>
+</tr>
+<tr>
+<td>Speaker banana plugs / binding posts</td>
+<td>Speaker power can exceed the envelope; no general mapping is proposed.</td>
+</tr>
+<tr>
+<td>Speakon NL4 / NL2</td>
+<td>Need a decision on which slots a two-way or one-way speaker uses.</td>
+</tr>
+<tr>
+<td>TOSLINK / ADAT</td>
+<td>Optical, not electrical contacts.</td>
+</tr>
+<tr>
+<td>HDMI / DisplayPort / Thunderbolt</td>
+<td>Out of scope.</td>
+</tr>
+<tr>
+<td>Eurorack ±12 V bus power header</td>
+<td>The rails are not a pair and this bus is out of scope.</td>
+</tr>
+<tr>
+<td>Combo XLR / TRS jack</td>
+<td>Use the mapping appropriate to the plug and its actual signal; one socket does not define one universal map.</td>
+</tr>
+</tbody>
+</table>
+<p>The connection guide's decisions are still open: proposed names and tags; RCA video on C; the phono earth lug on shield; whether a profile may use V for something other than power and how power rules then apply; USB-C SuperSpeed B/C lanes; and 2x5 shield pins. The TRRS pinout and shield bonding also remain provisional. Document your choices rather than treating them as approved.</p>
+<p>The goal is to make the next module more fun to add—not to pretend that a cable can replace a circuit, a pinout or a bench test.</p>
+</body>
+</html>
