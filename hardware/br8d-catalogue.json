@@ -1,0 +1,3333 @@
+{
+  "_about": "Machine-readable form of hardware/br8d-catalogue.md. Each module lists its folder, size, occupied pairs and files. Fields with null or empty values are for the design and sourcing workflow to fill in.",
+  "source": "hardware/br8d-catalogue.md",
+  "title": "br8d adapter module catalogue",
+  "notes": [
+    "Find your connector: container (heading 1), application (heading 2), family (heading 3), then the module (heading 4). Module names link to their proposed folders. The maps are proposals; nothing here is built yet. The size token (`1u` or `2u`) gives the board width in 1U units."
+  ],
+  "containers": [
+    {
+      "name": "Analogue audio and CV",
+      "notes": [],
+      "applications": [
+        {
+          "name": "3.5 mm sockets: AUX and CV",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-aux",
+              "folder": "hardware/br8d-i-aux",
+              "composite": false,
+              "notes": [
+                "Maps: TS: A: tip / sleeve. TRS stereo: A: tip (left) / sleeve; B: ring (right) / sleeve. TRS balanced: A: tip / ring; sleeve to a separate shield. TRRS (provisional): A: tip / ring 1; V: ring 2 / sleeve.",
+                "Use 3.5 mm sockets for these; a 2.5 mm socket needs its own name and footprint.",
+                "TRRS needs a `br8d-o-patch` lead. The sleeve makes contact first, and the contacts can short during insertion. A three-pole plug shorts V and is not a valid power signature. CTIA and OMTP headsets swap ring 2 and sleeve, so a headset is not a br8d lead."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "3.5 mm jack (TS, TRS, TRRS)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-aux-1ts-br0-1u-A",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/1ts-br0-1u-A",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TS socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-1ts-br0-1u-B",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/1ts-br0-1u-B",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TS socket on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-2ts-br0-2u-AB",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/2ts-br0-2u-AB",
+                  "layout": "2ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two TS sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-4ts-br0-2u-ABCV",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/4ts-br0-2u-ABCV",
+                  "layout": "4ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four TS sockets, one per pair. V signal use is open."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-4ts-io1-2u-ABCV",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/4ts-io1-2u-ABCV",
+                  "layout": "4ts",
+                  "map": null,
+                  "function": "io1",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Shared AUX/CV I/O with level 1 protection. Circuit and power are undecided."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-1trs-br0-1u-AB",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/1trs-br0-1u-AB",
+                  "layout": "1trs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One stereo TRS socket: left on A, right on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-2trs-br0-2u-ABCV",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/2trs-br0-2u-ABCV",
+                  "layout": "2trs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "First stereo socket on A/B, second on C/V. Tip is the first pair's +, ring the second pair's +, and the sleeve joins both returns. V signal use is open."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-1TRSbal-br0-1u-A",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/1TRSbal-br0-1u-A",
+                  "layout": "1TRSbal",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One balanced TRS socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-4TRSbal-br0-2u-ABCV",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/4TRSbal-br0-2u-ABCV",
+                  "layout": "4TRSbal",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four balanced TRS sockets, one per pair. Sleeves go to a separate shield."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aux-1trrs-br0-1u-AV",
+                  "family": "br8d-i-aux",
+                  "folder": "hardware/br8d-i-aux/1trrs-br0-1u-AV",
+                  "layout": "1trrs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TRRS socket, provisional map as above."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-cv",
+              "folder": "hardware/br8d-i-cv",
+              "composite": false,
+              "notes": [
+                "Connector: 3.5 mm TS for modular CV, gate and clock.",
+                "The single-socket CV boards are the AUX TS boards in a CV-labelled box, so they share a design (see [Design inheritance](#design-inheritance)).",
+                "The TRS and TRRS CV layouts are new, not the AUX map. The four-TRS shield needs its own path, and tying the two-TRRS sleeves together would join B- and V-."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "3.5 mm jack (TS, TRS, TRRS)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-cv-1ts-br0-1u-A",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/1ts-br0-1u-A",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One socket on A. Same board as `br8d-i-aux-1ts-br0-1u-A`."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-1ts-br0-1u-B",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/1ts-br0-1u-B",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One socket on B. Same board as `br8d-i-aux-1ts-br0-1u-B`."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-2ts-br0-2u-AB",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/2ts-br0-2u-AB",
+                  "layout": "2ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-4ts-br0-2u-ABCV",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/4ts-br0-2u-ABCV",
+                  "layout": "4ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four sockets, one per pair. V use is open."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-4TRSbal-br0-2u-ABCV",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/4TRSbal-br0-2u-ABCV",
+                  "layout": "4TRSbal",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four TRS sockets, tip / ring to + / -, sleeves to a separate shield. Same map as the balanced AUX board."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-2trrs-br0-2u-ABCV",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/2trrs-br0-2u-ABCV",
+                  "layout": "2trrs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two TRRS sockets: A on tip / ring 1 with B on ring 2 / sleeve; C on tip / ring 1 with V on ring 2 / sleeve (proposed). Whether the sleeves also go to shield is undecided. Not the AUX TRRS profile, so it needs its own parent."
+                  ]
+                },
+                {
+                  "id": "br8d-i-cv-4ts-io1-2u-ABCV",
+                  "family": "br8d-i-cv",
+                  "folder": "hardware/br8d-i-cv/4ts-io1-2u-ABCV",
+                  "layout": "4ts",
+                  "map": null,
+                  "function": "io1",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Active CV I/O with level 1 protection. Circuit, power source and direction are not designed yet."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "6.35 mm jack",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-jack",
+              "folder": "hardware/br8d-i-jack",
+              "composite": false,
+              "notes": [
+                "Maps: TS: A: tip / sleeve. TRS stereo: A: tip (left) / sleeve; B: ring (right) / sleeve. TRS balanced: A: tip / ring; sleeve to a separate shield.",
+                "Insert jacks often use tip and ring for send and return. Those need their own profile."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "6.35 mm jack (TS, TRS)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-jack-1ts-br0-1u-A",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/1ts-br0-1u-A",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TS socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-jack-1ts-br0-1u-B",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/1ts-br0-1u-B",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TS socket on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-jack-1trs-br0-1u-AB",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/1trs-br0-1u-AB",
+                  "layout": "1trs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One stereo TRS socket: left on A, right on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-jack-2trs-br0-2u-ABCV",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/2trs-br0-2u-ABCV",
+                  "layout": "2trs",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two stereo sockets: first on A/B, second on C/V. Sleeves join their returns. V use is open."
+                  ]
+                },
+                {
+                  "id": "br8d-i-jack-1TRSbal-br0-1u-A",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/1TRSbal-br0-1u-A",
+                  "layout": "1TRSbal",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One balanced TRS socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-jack-1TRSbal-br0-1u-B",
+                  "family": "br8d-i-jack",
+                  "folder": "hardware/br8d-i-jack/1TRSbal-br0-1u-B",
+                  "layout": "1TRSbal",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One balanced TRS socket on B."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RCA and turntable",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-rca",
+              "folder": "hardware/br8d-i-rca",
+              "composite": true,
+              "notes": [
+                "Map: each socket is tip to + and sleeve to -. Left is usually white (sometimes black), right red, video yellow.",
+                "The 2- and 4-socket boards serve as mono or stereo; the pairs decide which.",
+                "A composite board combines more than one connector. Count independent pairs, not sockets. A shared pair ties its contacts together, so it is not another channel. One 2x4 header has only four pairs.",
+                "Three RCA sockets (left, right, video) use A, B and C. An independent stereo TRS socket needs two more pairs, five in total. Alternatives: mirror repeats RCA stereo on TRS, so don't connect independent outputs to both; mono keeps the three RCA signals but gives up TRS stereo and the power pair; dropping video frees C for a stereo TRS pair on C/V; two br8d headers give five pairs but need a multi-header naming and pin convention, because the `-ABCV` suffix can't say which header owns a pair."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "RCA phono socket",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-rca-1rca-br0-1u-A",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/1rca-br0-1u-A",
+                  "layout": "1rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One RCA socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rca-2rca-br0-2u-AB",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/2rca-br0-2u-AB",
+                  "layout": "2rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two RCA sockets, one per pair. Stereo is left on A, right on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rca-4rca-br0-2u-ABCV",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/4rca-br0-2u-ABCV",
+                  "layout": "4rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four RCA sockets, one per pair. V use is open."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rca-3rcaAV-br0-2u-ABC",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/3rcaAV-br0-2u-ABC",
+                  "layout": "3rcaAV",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Composite video trio: left on A, right on B, video on C (proposed). Mixed RCA and TRS layouts are the 3rcaAV1trs modules below."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rca-3rcaAV1trs-mirror-br0-2u-ABC",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/3rcaAV1trs-mirror-br0-2u-ABC",
+                  "layout": "3rcaAV1trs",
+                  "map": "mirror",
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Left on A, right on B, video on C. TRS tip to A+, ring to B+, sleeve to A- and B-. The TRS repeats the RCA stereo pair; it does not add channels."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rca-3rcaAV1trs-mono-br0-2u-ABCV",
+                  "family": "br8d-i-rca",
+                  "folder": "hardware/br8d-i-rca/3rcaAV1trs-mono-br0-2u-ABCV",
+                  "layout": "3rcaAV1trs",
+                  "map": "mono",
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Left on A, right on B, video on C. TRS tip / sleeve on V+ / V-, ring unused. This keeps all three RCA signals but gives up the power pair.",
+                    "`mirror` and `mono` distinguish layouts that the pair suffix alone can't describe."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-phono",
+              "folder": "hardware/br8d-i-phono",
+              "composite": false,
+              "notes": [
+                "Map: left on A, right on B, each tip / sleeve. Earth lug goes to a separate shield contact (proposed).",
+                "A moving-magnet cartridge is sensitive to load. Pick the gain and loading stage in the endpoint, not on the breakout."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "RCA phono socket",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "2u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-phono-2rca-br0-2u-AB",
+                  "family": "br8d-i-phono",
+                  "folder": "hardware/br8d-i-phono/2rca-br0-2u-AB",
+                  "layout": "2rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two RCA sockets with a separate earth-lug connection."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Balanced XLR",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-xlr",
+              "folder": "hardware/br8d-i-xlr",
+              "composite": false,
+              "notes": [
+                "Map: pin 2 (hot) on + and pin 3 (cold) on -; pin 1 is shield.",
+                "Audio XLR and DMX XLR swap pins 2 and 3 on A, so their boards are not interchangeable. Check the device before plugging in.",
+                "Phantom power puts +48 V on both signal pins relative to pin 1. Ribbon mics and some older line gear don't like it, so switch phantom off unless the mic needs it."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "XLR 3-pin (female or male per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-xlr-xlr3f-br0-1u-A",
+                  "family": "br8d-i-xlr",
+                  "folder": "hardware/br8d-i-xlr/xlr3f-br0-1u-A",
+                  "layout": "xlr3f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-xlr-xlr3f-br0-1u-B",
+                  "family": "br8d-i-xlr",
+                  "folder": "hardware/br8d-i-xlr/xlr3f-br0-1u-B",
+                  "layout": "xlr3f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-3 on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-xlr-xlr3m-br0-1u-A",
+                  "family": "br8d-i-xlr",
+                  "folder": "hardware/br8d-i-xlr/xlr3m-br0-1u-A",
+                  "layout": "xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-xlr-xlr3m-br0-1u-B",
+                  "family": "br8d-i-xlr",
+                  "folder": "hardware/br8d-i-xlr/xlr3m-br0-1u-B",
+                  "layout": "xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on B."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Speakers",
+      "notes": [
+        "Speaker outputs can carry tens of volts and enough current to damage a small endpoint. Treat them as level 4-5 work and check the amplifier's output before connecting anything."
+      ],
+      "applications": [
+        {
+          "name": "Passive speakers",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-speaker-pas",
+              "folder": "hardware/br8d-i-speaker-pas",
+              "composite": false,
+              "notes": [
+                "Map (NL8): A: pin 1+ / 1- (sub); B: pin 2+ / 2- (low); C: pin 3+ / 3- (mid); V: pin 4+ / 4- (high).",
+                "V carries a speaker signal, not power. The V power rules do not fit this case and need an exemption.",
+                "The NL4, NL2, banana and binding-post boards below are proposals. Each connector's pair allocation for two-way and one-way speakers is still open.",
+                "NL4 is likely too wide for 1U; check the datasheet. NL2 is proposed on 1U."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "Speakon NL8/NL4/NL2, banana or binding post (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-speaker-pas-1nl8-br0-2u-ABCV",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/1nl8-br0-2u-ABCV",
+                  "layout": "1nl8",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Speakon NL8, four pairs."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-1nl4-br0-2u-AB",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/1nl4-br0-2u-AB",
+                  "layout": "1nl4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Speakon NL4 (proposed): 1+ / 1- on A, 2+ / 2- on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-1nl2-br0-1u-A",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/1nl2-br0-1u-A",
+                  "layout": "1nl2",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Speakon NL2 (proposed): 1+ / 1- on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-1banana-br0-1u-A",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/1banana-br0-1u-A",
+                  "layout": "1banana",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One pair of 4 mm banana sockets: + on A+, - on A-."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-2banana-br0-2u-AB",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/2banana-br0-2u-AB",
+                  "layout": "2banana",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two banana pairs, one per speaker: left on A, right on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-1bind-br0-1u-A",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/1bind-br0-1u-A",
+                  "layout": "1bind",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One pair of binding posts: red on A+, black on A-."
+                  ]
+                },
+                {
+                  "id": "br8d-i-speaker-pas-2bind-br0-2u-AB",
+                  "family": "br8d-i-speaker-pas",
+                  "folder": "hardware/br8d-i-speaker-pas/2bind-br0-2u-AB",
+                  "layout": "2bind",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two binding-post pairs, one per speaker."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Powered speakers",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-speaker-pow",
+              "folder": "hardware/br8d-i-speaker-pow",
+              "composite": false,
+              "notes": [
+                "Signal profile, not a connector map: A: left+ / left-; B: right+ / right-; C: sub+ / sub-; V: power+ / power-.",
+                "No connector is chosen yet, so no variant is proposed. Pick a four-pair connector, then define levels, power and the endpoint before drawing a board."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "Not yet defined (no modules)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Digital audio and MIDI",
+      "notes": [],
+      "applications": [
+        {
+          "name": "MIDI",
+          "notes": [
+            "MIDI is a 5 mA current loop, one direction per cable. Type A and Type B TRS swap tip and ring, so check which one a lead is before connecting it. The shield is conventionally bonded at the OUT end, so a MIDI IN socket does not connect DIN pin 2. A legacy MIDI OUT is a foreign source, not a br8d peer."
+          ],
+          "families": [
+            {
+              "name": "br8d-i-midi",
+              "folder": "hardware/br8d-i-midi",
+              "composite": false,
+              "notes": [
+                "DIN-5 (180 degrees): A: pin 4 (source) / pin 5 (sink); shield: pin 2.",
+                "TRS Type A: A: ring (source) / tip (sink); shield: sleeve.",
+                "TRS Type B: A: tip (source) / ring (sink); shield: sleeve.",
+                "Each socket is one direction; the endpoint decides which role it plays."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "5-pin DIN or 3.5 mm TRS (MIDI TRS-A/B)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-midi-1din5f-br0-1u-A",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/1din5f-br0-1u-A",
+                  "layout": "1din5f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One female DIN-5 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-1din5f-br0-1u-B",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/1din5f-br0-1u-B",
+                  "layout": "1din5f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One female DIN-5 on B; pin 2 to a separate shield."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-2din5f-br0-2u-AB",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/2din5f-br0-2u-AB",
+                  "layout": "2din5f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two female DIN-5 sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-1TRSA-br0-1u-A",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/1TRSA-br0-1u-A",
+                  "layout": "1TRSA",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One 3.5 mm TRS Type A socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-2TRSA-br0-2u-AB",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/2TRSA-br0-2u-AB",
+                  "layout": "2TRSA",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two TRS Type A sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-1TRSB-br0-1u-A",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/1TRSB-br0-1u-A",
+                  "layout": "1TRSB",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One 3.5 mm TRS Type B socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-midi-2TRSB-br0-2u-AB",
+                  "family": "br8d-i-midi",
+                  "folder": "hardware/br8d-i-midi/2TRSB-br0-2u-AB",
+                  "layout": "2TRSB",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two TRS Type B sockets, one per pair."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "S/PDIF, AES3 and word clock",
+          "notes": [
+            "Coax and balanced digital audio. Use 75 ohm BNC or the correct XLR for the rate in use."
+          ],
+          "families": [
+            {
+              "name": "br8d-i-spdif",
+              "folder": "hardware/br8d-i-spdif",
+              "composite": false,
+              "notes": [
+                "RCA (usually orange) or 3.5 mm TS: A: tip / sleeve.",
+                "BNC, 75 ohm: A: centre / shell."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "RCA, 3.5 mm TS or BNC (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-spdif-1rca-br0-1u-A",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/1rca-br0-1u-A",
+                  "layout": "1rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One RCA socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-spdif-2rca-br0-2u-AB",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/2rca-br0-2u-AB",
+                  "layout": "2rca",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two RCA sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-spdif-1ts-br0-1u-A",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/1ts-br0-1u-A",
+                  "layout": "1ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One 3.5 mm TS socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-spdif-2ts-br0-2u-AB",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/2ts-br0-2u-AB",
+                  "layout": "2ts",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two 3.5 mm TS sockets, one per pair."
+                  ]
+                },
+                {
+                  "id": "br8d-i-spdif-1bnc-br0-1u-A",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/1bnc-br0-1u-A",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-spdif-1bnc-br0-1u-B",
+                  "family": "br8d-i-spdif",
+                  "folder": "hardware/br8d-i-spdif/1bnc-br0-1u-B",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on B."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-aes",
+              "folder": "hardware/br8d-i-aes",
+              "composite": false,
+              "notes": [
+                "AES3 balanced, 110 ohm XLR-3: A: pin 2 (+) / pin 3 (-); shield: pin 1.",
+                "AES3id, 75 ohm BNC: A: centre / shell."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "XLR 3-pin or BNC (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-aes-1xlr3f-br0-1u-A",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1xlr3f-br0-1u-A",
+                  "layout": "1xlr3f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aes-1xlr3f-br0-1u-B",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1xlr3f-br0-1u-B",
+                  "layout": "1xlr3f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-3 on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aes-1xlr3m-br0-1u-A",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1xlr3m-br0-1u-A",
+                  "layout": "1xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aes-1xlr3m-br0-1u-B",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1xlr3m-br0-1u-B",
+                  "layout": "1xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on B."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aes-1bnc-br0-1u-A",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1bnc-br0-1u-A",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-aes-1bnc-br0-1u-B",
+                  "family": "br8d-i-aes",
+                  "folder": "hardware/br8d-i-aes/1bnc-br0-1u-B",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on B."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-wclk",
+              "folder": "hardware/br8d-i-wclk",
+              "composite": false,
+              "notes": [
+                "Word clock, 75 ohm BNC: A: centre / shell."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "BNC",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-wclk-1bnc-br0-1u-A",
+                  "family": "br8d-i-wclk",
+                  "folder": "hardware/br8d-i-wclk/1bnc-br0-1u-A",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-wclk-1bnc-br0-1u-B",
+                  "family": "br8d-i-wclk",
+                  "folder": "hardware/br8d-i-wclk/1bnc-br0-1u-B",
+                  "layout": "1bnc",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One BNC socket on B."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Optical: TOSLINK and ADAT",
+          "notes": [
+            "Light, not wire, so the board maps the transceiver's electrical side, not the optical port. ADAT (eight channels at 48 kHz) uses the same TOSLINK transceiver."
+          ],
+          "families": [
+            {
+              "name": "br8d-i-toslink",
+              "folder": "hardware/br8d-i-toslink",
+              "composite": false,
+              "notes": [
+                "Transceiver electrical side: A: TX data / GND; B: RX data / GND; V: VCC / GND.",
+                "Check the module's logic and supply voltage (commonly 3.3 V or 5 V) before wiring to a node."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "TOSLINK optical transceiver",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-toslink-1xcvr-br0-1u-ABV",
+                  "family": "br8d-i-toslink",
+                  "folder": "hardware/br8d-i-toslink/1xcvr-br0-1u-ABV",
+                  "layout": "1xcvr",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One TOSLINK transceiver module on the header."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lighting",
+      "notes": [],
+      "applications": [
+        {
+          "name": "DMX512",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-dmx",
+              "folder": "hardware/br8d-i-dmx",
+              "composite": false,
+              "notes": [
+                "XLR-5: A: pin 3 (Data 1+) / pin 2 (Data 1-); B: pin 5 (Data 2+) / pin 4 (Data 2-); shield: pin 1.",
+                "XLR-3 fixtures: A: pin 3 (Data+) / pin 2 (Data-); shield: pin 1.",
+                "DMX swaps pins 2 and 3 on A relative to audio XLR. See [XLR](#balanced-xlr)."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "XLR 3-pin or 5-pin (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-dmx-1xlr5f-br0-1u-AB",
+                  "family": "br8d-i-dmx",
+                  "folder": "hardware/br8d-i-dmx/1xlr5f-br0-1u-AB",
+                  "layout": "1xlr5f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-5, both data pairs."
+                  ]
+                },
+                {
+                  "id": "br8d-i-dmx-1xlr5m-br0-1u-AB",
+                  "family": "br8d-i-dmx",
+                  "folder": "hardware/br8d-i-dmx/1xlr5m-br0-1u-AB",
+                  "layout": "1xlr5m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-5, both data pairs."
+                  ]
+                },
+                {
+                  "id": "br8d-i-dmx-1xlr3f-br0-1u-A",
+                  "family": "br8d-i-dmx",
+                  "folder": "hardware/br8d-i-dmx/1xlr3f-br0-1u-A",
+                  "layout": "1xlr3f",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Female XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-dmx-1xlr3m-br0-1u-A",
+                  "family": "br8d-i-dmx",
+                  "folder": "hardware/br8d-i-dmx/1xlr3m-br0-1u-A",
+                  "layout": "1xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-dmx-1xlr3m-br0-1u-B",
+                  "family": "br8d-i-dmx",
+                  "folder": "hardware/br8d-i-dmx/1xlr3m-br0-1u-B",
+                  "layout": "1xlr3m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Male XLR-3 on B."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Addressable LED",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-led",
+              "folder": "hardware/br8d-i-led",
+              "composite": false,
+              "notes": [
+                "Connector: addressable LEDs, JST-SM or similar. Check the strip's pinout first.",
+                "Map: A: data / clock; V: 5 V / GND. WS2812 uses data only, so A- is left open. APA102 and SK9822 use data and clock.",
+                "Long strips need a power injector. The 500 mA V supply target is provisional."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "JST SM 3-pin or 4-pin (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-led-1jstsm3-br0-1u-AV",
+                  "family": "br8d-i-led",
+                  "folder": "hardware/br8d-i-led/1jstsm3-br0-1u-AV",
+                  "layout": "1jstsm3",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Three contacts: data and power."
+                  ]
+                },
+                {
+                  "id": "br8d-i-led-1jstsm4-br0-1u-AV",
+                  "family": "br8d-i-led",
+                  "folder": "hardware/br8d-i-led/1jstsm4-br0-1u-AV",
+                  "layout": "1jstsm4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four contacts: data, clock and power."
+                  ]
+                },
+                {
+                  "id": "br8d-i-led-2jstsm4-br0-2u-ABV",
+                  "family": "br8d-i-led",
+                  "folder": "hardware/br8d-i-led/2jstsm4-br0-2u-ABV",
+                  "layout": "2jstsm4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two four-contact sockets on A and B share V power. Current is shared; neither output is isolated."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "notes": [],
+      "applications": [
+        {
+          "name": "USB ports",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-o-usb",
+              "folder": "hardware/br8d-o-usb",
+              "composite": false,
+              "notes": [
+                "A br8d port is only USB if the endpoint speaks USB. Real hosts and chargers are foreign sources.",
+                "Profile names from the connection guide map to these boards: `br8d-o-A` / `-A-3`, `-B` / `-B-3`, `-B-mini`, `-B-micro`, `-C` / `-C-4`.",
+                "USB 2.0 A and B: A: pin 3 D+ / pin 2 D-; V: pin 1 VBUS / pin 4 GND; shield: shell.",
+                "USB-C: A: A6/B6 D+ / A7/B7 D-; V: A4, A9, B4, B9 VBUS / A1, A12, B1, B12 GND; shield: shell.",
+                "Mini/micro ID and USB 3.x pin 7 GND_DRAIN are not mapped."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "USB-A, B, B mini/micro or C (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-o-usb-1usbA-br0-1u-AV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbA-br0-1u-AV",
+                  "layout": "1usbA",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-A 2.0 receptacle."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbA3-br0-1u-ABCV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbA3-br0-1u-ABCV",
+                  "layout": "1usbA3",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-A 3.x receptacle. B: pin 9 SSTX+ / pin 8 SSTX-; C: pin 6 SSRX+ / pin 5 SSRX-."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbB-br0-1u-AV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbB-br0-1u-AV",
+                  "layout": "1usbB",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-B 2.0 receptacle, square."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbB3-br0-1u-ABCV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbB3-br0-1u-ABCV",
+                  "layout": "1usbB3",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-B 3.x receptacle. B: pin 9 SSRX+ / pin 8 SSRX-; C: pin 6 SSTX+ / pin 5 SSTX-. B is host-to-device and C device-to-host."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbBmini-br0-1u-AV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbBmini-br0-1u-AV",
+                  "layout": "1usbBmini",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Mini-B receptacle. V: pin 1 VBUS / pin 5 GND."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbBmicro-br0-1u-AV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbBmicro-br0-1u-AV",
+                  "layout": "1usbBmicro",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Micro-B receptacle. V: pin 1 VBUS / pin 5 GND."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbC-br0-1u-AV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbC-br0-1u-AV",
+                  "layout": "1usbC",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-C receptacle, USB 2.0 cable, two-pair profile. Do not drive VBUS before the endpoint has identified itself; leave CC unconnected for now."
+                  ]
+                },
+                {
+                  "id": "br8d-o-usb-1usbC-br0-1u-ABCV",
+                  "family": "br8d-o-usb",
+                  "folder": "hardware/br8d-o-usb/1usbC-br0-1u-ABCV",
+                  "layout": "1usbC",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "USB-C receptacle, full-featured cable, four-pair profile. B: A2 TX1+ / A3 TX1-; C: B11 RX1+ / B10 RX1-.",
+                    "Open: the B/C SuperSpeed lanes swap when the plug is flipped. SBU is unmapped."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Thunderbolt",
+          "notes": [
+            "Thunderbolt 3 and 4 use the USB-C connector. The power and USB 2.0 contacts follow the [USB-C](#usb-ports) boards above. The high-speed lanes need a dedicated design, so no header-based Thunderbolt board is proposed."
+          ],
+          "families": []
+        }
+      ]
+    },
+    {
+      "name": "Network and buses",
+      "notes": [],
+      "applications": [
+        {
+          "name": "Ethernet",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-cat-rj45",
+              "folder": "hardware/br8d-cat-rj45",
+              "composite": false,
+              "notes": [
+                "Profiles: `br8d-o-cat` connector, `br8d-i-lan` interface.",
+                "Map: A: pin 1 / pin 2; B: pin 3 / pin 6; C: pin 4 / pin 5; V: pin 7 / pin 8. Shield: socket shell, if present.",
+                "Straight-through cable in T568B at both ends. A crossover swaps A and B.",
+                "Passive PoE mode B uses C and V as joined power rails, so they are not four independent pairs."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "RJ45 (Ethernet)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-cat-rj45-br0-1u-ABCV",
+                  "family": "br8d-cat-rj45",
+                  "folder": "hardware/br8d-cat-rj45/br0-1u-ABCV",
+                  "layout": null,
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One RJ45 socket."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-lan",
+              "folder": "hardware/br8d-i-lan",
+              "composite": false,
+              "notes": [
+                "M12 D-coded, four-pin industrial Ethernet. Map: A: pin 1 / pin 3; B: pin 2 / pin 4; shield: housing."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "M12 D-code 4-pin",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-lan-1m12d4-br0-1u-AB",
+                  "family": "br8d-i-lan",
+                  "folder": "hardware/br8d-i-lan/1m12d4-br0-1u-AB",
+                  "layout": "1m12d4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One M12 D-coded four-pin connector. Choose contact gender and mounting for the panel."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Telephone",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-rj11",
+              "folder": "hardware/br8d-i-rj11",
+              "composite": false,
+              "notes": [
+                "Map (6P contacts numbered 1-6 left to right, clip down): line 1 on pins 3 (tip) and 4 (ring). Pins 2 and 5 are unused on RJ11. RJ14 adds line 2 on pins 2 and 5; RJ12 uses the outer pins for key-system control, not a second line.",
+                "Use: handset cords, phone-to-phone test leads, or your own line interface.",
+                "Do not connect a board to a live telephone line. Lines can carry about 48 V DC, and ringing reaches about 90 V RMS. Telephone network connections are regulated in most countries."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "RJ11 / RJ12 (6P6C)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-rj11-1rj11-br0-1u-A",
+                  "family": "br8d-i-rj11",
+                  "folder": "hardware/br8d-i-rj11/1rj11-br0-1u-A",
+                  "layout": "1rj11",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One RJ11 socket; line 1 on A."
+                  ]
+                },
+                {
+                  "id": "br8d-i-rj11-1rj12-br0-1u-AB",
+                  "family": "br8d-i-rj11",
+                  "folder": "hardware/br8d-i-rj11/1rj12-br0-1u-AB",
+                  "layout": "1rj12",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One RJ12 socket; line 1 on A. RJ12 is a single line, so there is no second pair to map."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Serial",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-com",
+              "folder": "hardware/br8d-i-com",
+              "composite": false,
+              "notes": [
+                "FTDI TTL-232R six-pin, host side: A: pin 4 TXD / pin 5 RXD; B: pin 6 RTS# / pin 2 CTS#; V: pin 3 VCC / pin 1 GND.",
+                "DE-9 RS-232, DTE (PC) side: A: pin 3 TXD / pin 2 RXD; B: pin 7 RTS / pin 8 CTS; C: pin 4 DTR / pin 6 DSR; V: - / pin 5 GND; shield: shell.",
+                "VCC is 3.3 V or 5 V, depending on the device. RS-232 swings about +/-5 to +/-15 V; a TTL or FTDI-level port will not work with it."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "FTDI 6-pin header or DE-9 male (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-com-1ftdi6-br0-1u-ABV",
+                  "family": "br8d-i-com",
+                  "folder": "hardware/br8d-i-com/1ftdi6-br0-1u-ABV",
+                  "layout": "1ftdi6",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One six-pin FTDI TTL-232R header, host side."
+                  ]
+                },
+                {
+                  "id": "br8d-i-com-1de9m-br0-1u-ABCV",
+                  "family": "br8d-i-com",
+                  "folder": "hardware/br8d-i-com/1de9m-br0-1u-ABCV",
+                  "layout": "1de9m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One male DE-9, DTE-style pins. DTE and DCE swap TXD and RXD. DCD and RI are unmapped."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Field buses",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-can",
+              "folder": "hardware/br8d-i-can",
+              "composite": false,
+              "notes": [
+                "DE-9 CAN, CiA 303-1: A: pin 7 CAN_H / pin 2 CAN_L; V: pin 9 CAN_V+ (optional) / pin 3 CAN_GND; shield: pin 5 CAN_SHLD.",
+                "CAN_V+ is nominally 7-13 V when supplied."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "DE-9 male",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-can-1de9m-br0-1u-AV",
+                  "family": "br8d-i-can",
+                  "folder": "hardware/br8d-i-can/1de9m-br0-1u-AV",
+                  "layout": "1de9m",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One male DE-9. Specify the optional V+ connection when designing."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-485",
+              "folder": "hardware/br8d-i-485",
+              "composite": false,
+              "notes": [
+                "RS-485 terminal block: A: D+ / D- (vendor labels vary, and TIA calls D+ \"B\"); V: - / GND (common); shield: shield terminal.",
+                "V- is a common reference for the bus, not a power supply."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "4-way terminal block",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "2u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-485-1term4-br0-2u-AV",
+                  "family": "br8d-i-485",
+                  "folder": "hardware/br8d-i-485/1term4-br0-2u-AV",
+                  "layout": "1term4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Four terminals: D+, D-, common and shield. Four 5.08 mm terminals are about 20 mm wide, so 2U leaves room for the enclosure clearance."
+                  ]
+                },
+                {
+                  "id": "br8d-i-485-2term4-br0-2u-AV",
+                  "family": "br8d-i-485",
+                  "folder": "hardware/br8d-i-485/2term4-br0-2u-AV",
+                  "layout": "2term4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two terminal blocks on the same bus and shield. Termination and topology are external."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sensor buses",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-qwic",
+              "folder": "hardware/br8d-i-qwic",
+              "composite": false,
+              "notes": [
+                "Qwiic / STEMMA QT, four-pin JST-SH. Map (provisional): A: pin 3 SDA / pin 4 SCL; V: pin 2 3.3 V / pin 1 GND.",
+                "Qwiic is **3.3 V only**. Plugging a 5 V device into it can damage the sensor, so use a 3.3 V port or a level-shifting bridge."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "JST SH 4-pin (Qwiic / STEMMA QT)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-qwic-1jstsh4-br0-1u-AV",
+                  "family": "br8d-i-qwic",
+                  "folder": "hardware/br8d-i-qwic/1jstsh4-br0-1u-AV",
+                  "layout": "1jstsh4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One four-pin JST-SH socket."
+                  ]
+                },
+                {
+                  "id": "br8d-i-qwic-2jstsh4-br0-2u-AV",
+                  "family": "br8d-i-qwic",
+                  "folder": "hardware/br8d-i-qwic/2jstsh4-br0-2u-AV",
+                  "layout": "2jstsh4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two sockets on the same SDA, SCL, 3.3 V and GND lines. Check combined current and pull-ups."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-grove",
+              "folder": "hardware/br8d-i-grove",
+              "composite": false,
+              "notes": [
+                "Grove four-pin: A: pin 2 / pin 1; V: pin 3 VCC / pin 4 GND. Check the device for 3.3 V or 5 V."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "Grove 4-pin 2.0 mm",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-grove-1grove4-br0-1u-AV",
+                  "family": "br8d-i-grove",
+                  "folder": "hardware/br8d-i-grove/1grove4-br0-1u-AV",
+                  "layout": "1grove4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One four-pin Grove socket."
+                  ]
+                },
+                {
+                  "id": "br8d-i-grove-2grove4-br0-2u-AV",
+                  "family": "br8d-i-grove",
+                  "folder": "hardware/br8d-i-grove/2grove4-br0-2u-AV",
+                  "layout": "2grove4",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two sockets sharing all four lines. Check voltage, current and pull-ups."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Video and display",
+      "notes": [],
+      "applications": [
+        {
+          "name": "Display sideband",
+          "notes": [
+            "Video itself runs on high-speed differential pairs that a 2x4 header can't carry. These boards map the low-speed sideband: EDID, hot-plug and power."
+          ],
+          "families": [
+            {
+              "name": "br8d-i-hdmi",
+              "folder": "hardware/br8d-i-hdmi",
+              "composite": false,
+              "notes": [
+                "HDMI 19-pin sideband: A: pin 16 DDC SDA / pin 15 DDC SCL; B: pin 19 HPD / pin 13 CEC; V: pin 18 +5 V / pin 17 GND.",
+                "Sources supply about 50 mA on +5 V."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "HDMI type A 19-pin",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-hdmi-1hdmi19-br0-1u-ABV",
+                  "family": "br8d-i-hdmi",
+                  "folder": "hardware/br8d-i-hdmi/1hdmi19-br0-1u-ABV",
+                  "layout": "1hdmi19",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One HDMI 19-pin socket, sideband only."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br8d-i-dp",
+              "folder": "hardware/br8d-i-dp",
+              "composite": false,
+              "notes": [
+                "DisplayPort 20-pin sideband: A: pin 15 AUX+ / pin 17 AUX- (differential, not single-ended); B: pin 18 HPD / pin 13 CONFIG1; V: pin 20 DP_PWR (3.3 V) / pin 19 GND."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "DisplayPort 20-pin",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-dp-1dp20-br0-1u-ABV",
+                  "family": "br8d-i-dp",
+                  "folder": "hardware/br8d-i-dp/1dp20-br0-1u-ABV",
+                  "layout": "1dp20",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One DisplayPort 20-pin socket, sideband only."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Headers and power",
+      "notes": [],
+      "applications": [
+        {
+          "name": "Ribbon headers",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-o-flat",
+              "folder": "hardware/br8d-o-flat",
+              "composite": false,
+              "notes": [
+                "2x4 keyed, shrouded IDC, 2.54 mm ribbon. Map: A: pin 1 / pin 2; B: pin 3 / pin 4; C: pin 5 / pin 6; V: pin 7 / pin 8. The red stripe marks pin 1.",
+                "`br8d-o-flat-8` in this catalogue is this profile. A board here is a header-to-header breakout or pass-through. Rotation maps pin n to pin 9-n."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "IDC ribbon header 8-pin or 10-pin (per module)",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": null,
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-o-flat-1idc8-br0-1u-ABCV",
+                  "family": "br8d-o-flat",
+                  "folder": "hardware/br8d-o-flat/1idc8-br0-1u-ABCV",
+                  "layout": "1idc8",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "2x4 header-to-header pass-through."
+                  ]
+                },
+                {
+                  "id": "br8d-o-flat-2idc8-br0-2u-ABCV",
+                  "family": "br8d-o-flat",
+                  "folder": "hardware/br8d-o-flat/2idc8-br0-2u-ABCV",
+                  "layout": "2idc8",
+                  "map": null,
+                  "function": "br0",
+                  "size": "2u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "Two parallel headers. All conductors are shared, not isolated."
+                  ]
+                },
+                {
+                  "id": "br8d-o-flat-1idc10-br0-1u-ABCV",
+                  "family": "br8d-o-flat",
+                  "folder": "hardware/br8d-o-flat/1idc10-br0-1u-ABCV",
+                  "layout": "1idc10",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "B",
+                    "C",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "2x5 to 2x4 pass-through. Pins 9 and 10 are proposed for shield, and the shield path is still open."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Eurorack power",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-eurorack",
+              "folder": "hardware/br8d-i-eurorack",
+              "composite": false,
+              "notes": [
+                "Eurorack 10-pin IDC (Doepfer style): pin 1 -12 V (red stripe), pin 2 GND, pin 9 GND, pin 10 +12 V. The 16-pin variant with +5 V is not mapped.",
+                "Map: A: -12 V / GND; V: +12 V / GND. The two GND returns join at the board.",
+                "The ribbon can be fitted backwards on a loose header. Check the stripe before you power up, because a reversed rail can damage modules."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "IDC 10-pin Eurorack power bus",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-eurorack-1idc10-br0-1u-AV",
+                  "family": "br8d-i-eurorack",
+                  "folder": "hardware/br8d-i-eurorack/1idc10-br0-1u-AV",
+                  "layout": "1idc10",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "A",
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One 10-pin IDC for the Eurorack bus, two pairs on the header."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DC power",
+          "notes": [],
+          "families": [
+            {
+              "name": "br8d-i-pwr",
+              "folder": "hardware/br8d-i-pwr",
+              "composite": false,
+              "notes": [
+                "5.5 x 2.1 mm DC barrel, power only. Map: V: centre / sleeve.",
+                "Centre-positive is common, but centre-negative exists. Check the supply's polarity and voltage."
+              ],
+              "spec": {
+                "status": "proposed",
+                "connector": {
+                  "description": "DC 5.5 mm barrel jack",
+                  "lcsc_part": null,
+                  "easyeda_symbol": null,
+                  "easyeda_footprint": null
+                },
+                "size": "1u",
+                "lcsc_parts": [],
+                "design_notes": []
+              },
+              "modules": [
+                {
+                  "id": "br8d-i-pwr-1dc5521-br0-1u-V",
+                  "family": "br8d-i-pwr",
+                  "folder": "hardware/br8d-i-pwr/1dc5521-br0-1u-V",
+                  "layout": "1dc5521",
+                  "map": null,
+                  "function": "br0",
+                  "size": "1u",
+                  "pairs": [
+                    "V"
+                  ],
+                  "status": "proposed",
+                  "lcsc_parts": [],
+                  "files": {
+                    "step": null,
+                    "thumbnail": null,
+                    "render": null,
+                    "reusable_block": null
+                  },
+                  "notes": [
+                    "One 5.5 x 2.1 mm barrel jack."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Not mapped",
+      "notes": [],
+      "applications": [
+        {
+          "name": "Mains and IEC",
+          "notes": [
+            "Mains never goes on a br8d header. Use a ready-made IEC inlet with a certified power module, and keep low-voltage DC on the [DC power](#dc-power) board."
+          ],
+          "families": []
+        },
+        {
+          "name": "Combo XLR/TRS sockets",
+          "notes": [
+            "A combo socket's contacts depend on which plug is inserted, so there is no single map. Use the XLR-3 board for balanced XLR or the TRS board for jack."
+          ],
+          "families": []
+        },
+        {
+          "name": "Cable forms",
+          "notes": [
+            "Twin flex (`br8d-o-flex`), shielded multicore (`br8d-o-shield`), unshielded loom (`br8d-o-loom`), M12 (`br8d-o-m12`) and community connectors (`br8d-o-x`) are cable or connector families, not defined maps. Twin flex carries one pair: A for a signal, or V for power."
+          ],
+          "families": []
+        }
+      ]
+    },
+    {
+      "name": "Reference",
+      "notes": [],
+      "applications": [
+        {
+          "name": "Reading the maps",
+          "notes": [
+            "Each module name is a proposed folder, relative to this file. Unless noted, the board connects a keyed, shrouded 2x4 2.54 mm header to the named connector. Folders sit under their family folder, with the name after the family prefix.",
+            "Header pin:  1   2   3   4   5   6   7   8\nConductor:  A+  A-  B+  B-  C+  C-  V+  V-",
+            "`A: X / Y` means A+ connects to X and A- to Y; B, C and V follow the same pattern. `-` means no external contact. Pin numbers are the connector's own contacts. Check the footprint and cable with a continuity test before use.",
+            "A repeated contact joins its header conductors, so stereo sleeves share a return. A **shield** listed in an entry is a separate contact, not a ninth signal pin. Coax shells used as the signal return are not separate shields.",
+            "Names beginning `br8d-i-` are interfaces; `br8d-o-` names are connector or cable forms. The safety and electrical limits are in the [architecture](../br8d-architecture.md)."
+          ],
+          "families": []
+        },
+        {
+          "name": "Candidate variants",
+          "notes": [
+            "The entries are starting points, not a full list. A suffix such as `-2u-ABCV` gives the size and occupied pairs, not a complete pin map. Unless noted, a variant follows its family's map.",
+            "The boards target a 1U x 1U PCB (20.38 x 23.58 mm), connector at the north edge. Large connectors such as XLR and Speakon may need a bigger board or a panel mount. Check the part, header, clearances and enclosure before designing."
+          ],
+          "families": []
+        },
+        {
+          "name": "Design inheritance",
+          "notes": [
+            "Inheritance is a **design relationship**: a child is a different application name for a shared design, or a later specialization. A shared breakout must have the same connector, pin map and populated circuitry. A label or box can change the application name without changing the board.",
+            "**AUX TS -> CV TS:** `br8d-i-cv` TS boards share the `br8d-i-aux` TS design at levels 0-2, and CV specialization starts at level 3. For example, `br8d-i-cv-1ts-br0-1u-A` uses the same board as `br8d-i-aux-1ts-br0-1u-A`.",
+            "**AUX TRS -> CV TRS:** the four-TRS CV board has the same map as the balanced AUX board, so it can share it. The two-TRRS CV layout needs its own parent.",
+            "**Other overlaps:** mono RCA -> S/PDIF RCA; AUX TS -> S/PDIF TS; balanced XLR -> AES XLR. S/PDIF and AES need the right impedance and bandwidth, so check the part before reusing a board.",
+            "**Pin 2/3 swap:** audio XLR and DMX XLR swap pins 2 and 3 on A, so their boards are not interchangeable.",
+            "Share a file only when the physical design matches, including the shield path."
+          ],
+          "families": []
+        }
+      ]
+    }
+  ]
+}
